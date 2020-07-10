@@ -1,7 +1,8 @@
 <template>
 	<div class="container">
 		<div class="box">
-			<img src="./imgs/u2.svg" alt="">
+			<div v-if="type=='登录'"><img src="./imgs/u2.svg" alt=""></div>
+			<div v-if="type=='注册'"><img src="./imgs/u1.svg" alt=""></div>
 			<div class="form">
 				<slot></slot>
 			</div>
@@ -12,6 +13,7 @@
 
 <script>
 	export default{
+		props:["type"],
 		name:"layout"
 	}
 </script>
@@ -23,6 +25,9 @@
 		margin: 0 auto;
 	}
 	.box{
+		display: flex;
+		flex-direction:row;
+		justify-content:space-between;
 		margin-top: 160px;
 		height: 507px;
 	}

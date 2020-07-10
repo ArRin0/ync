@@ -1,5 +1,5 @@
 <template>
-	<layout>
+	<layout type="注册">
 		<!-- 当abcEvent发生的时候，执行doSubmit -->
 		<Gform type="注册" @abcEvent="doSubmit"></Gform>
 	</layout>
