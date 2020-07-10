@@ -1,5 +1,5 @@
 <template>
-	<layout>
+	<layout type="登录">
 		<Gform type="登录"></Gform>
 	</layout>
 </template>
@@ -17,7 +17,7 @@
 <style>
 </style>
 <template>
-	<layout>
+	<layout type="登录">
 		<Gform type="登录" @abcEvent="doSubmit"></Gform>
 	</layout>
 </template>
