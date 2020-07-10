@@ -100,6 +100,5 @@
 		width: 0;
 		height: 0;
 		border: transparent 8px solid;
-		border-right-color: #000000;
 	}
 </style>

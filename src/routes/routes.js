@@ -21,8 +21,12 @@ const routes = [{
 		component: () => import('@/pages/login/login'),
 	},
 	{
-		path: '/abc',
-		component: () => import('@/pages/try/new_file'),
+		path: '/from',
+		component: () => import('@/pages/mf/from'),
+	},
+	{
+		path: '/test',
+		component: () => import('@/pages/index/current-session/index.vue'),
 	},
 ]
 

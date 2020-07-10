@@ -1,7 +1,7 @@
 <template>
 	<form action="">
 		<h3>{{type}}极客营客服云</h3>
-		<div class="item"><label for="">账号</label><input type="text" v-model="customerServicePhone"></div>
+		<div class="item"><label for="">账号</label><input type="text" v-model="phone"></div>
 		<div class="item"><label for="">密码</label><input type="password" v-model="password"></div>
 		<div class="tip" v-if="isLoginForm">忘记密码请联系客服</div>
 		<div class="item btn" @click="doSubmit">{{type}}</div>
@@ -16,17 +16,17 @@
 		props:["type"],
 		data:function(){
 			return {
-				customerServicePhone:"",
+				phone:"",
 				password:"",
 				isLoginForm:this.type=='登录'
 			}
 		},
 		methods:{
 			doSubmit(){
-				let customerServicePhone = this.customerServicePhone;
+				let phone = this.phone;
 				let password = this.password;
 				// 告诉父组件，abcEvent已经发生了
-				this.$emit("abcEvent",{customerServicePhone,password})
+				this.$emit("abcEvent",{phone,password})
 			}
 		},
 		computed:{
