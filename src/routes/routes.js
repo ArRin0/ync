@@ -32,10 +32,10 @@ const routes = [{
 		path: '/customer',
 		component: () => import('@/pages/mf/customer'),
 	},
-	{
-		path: '/test',
-		component: () => import('@/pages/index/current-session/index.vue'),
-	},
+	// {
+	// 	path: '/test',
+	// 	component: () => import('@/pages/mf/trytable'),
+	// },
 ]
 
 export default routes;

@@ -5,7 +5,7 @@
 		<div class="myf">
 			    <div class="layui-inline">
 				    <div class="layui-input-inline"  >
-					<el-select v-model="value" @change="selectModel($event)" filterable collapse-tags   placeholder="全部客服">
+					<el-select v-model="value" @change="selectModel($event)" filterable collapse-tags   placeholder="客户等级">
 					<el-option
 					      v-for="item in options"
 					      :key="item.value"
@@ -20,18 +20,6 @@
 					<el-select v-model="value2" @change="selectModel2($event)" filterable collapse-tags   placeholder="全部来源">
 					<el-option
 					      v-for="item in options2"
-					      :key="item.value"
-					      :label="item.label"
-					      :value="item.value">
-					    </el-option>
-					</el-select>
-				    </div>
-				</div>
-				<div class="layui-inline">
-				    <div class="layui-input-inline" >
-					<el-select v-model="value3" @change="selectModel3($event)" filterable collapse-tags   placeholder="全部终端">
-					<el-option
-					      v-for="item in options3"
 					      :key="item.value"
 					      :label="item.label"
 					      :value="item.value">
@@ -62,12 +50,13 @@
 				</div>
 			<div class="boxShadow">
 			    <el-table
-			      :data="tables"
+			      :data="tables.slice((currentPage-1)*pagesize,currentPage*pagesize)"
 			      ref="multipleTable"
 			      tooltip-effect="dark"
 			      style="width: 100% "
 				  header-cell-style="background-color: rgba(0, 110, 255, 0.098)"
 				  >
+				  <el-table-column type="selection" width= "45px" ></el-table-column>
 			      <template v-for='(col) in tableData'>
 			        <el-table-column
 			          sortable
@@ -86,6 +75,19 @@
 			        </template>
 			      </el-table-column>
 			    </el-table>
+				<div class="pagination">
+				            <el-pagination 
+				                @size-change="handleSizeChange" 
+				                @current-change="handleCurrentChange" 
+				                :current-page="currentPage" 
+				                :page-sizes="[5, 10, 20, 40]" 
+				                :page-size="pagesize" 
+				                layout="total, sizes,prev, pager, next" 
+				                :total="tables.length" 
+				                prev-text="上一页" 
+				                next-text="下一页">
+				            </el-pagination>
+				        </div>
 			</div>
 		</div>
 	</div>
@@ -105,46 +107,42 @@
 	  },
     data () {
       return {
+		currentPage: 1, //默认显示页面为1
+		pagesize: 5, //    每页的数据条数
 		rangeDate: [] ,
         tables: [],
 		myinputs:'',
         tableData: [{
-          dataItem: 'visitorName',
-          dataName: '访客名称'
+          dataItem: 'nickName',
+          dataName: '客户名称'
         }, {
-          dataItem: 'browser',
-          dataName: '来源'
+          dataItem: 'realName',
+          dataName: '真实姓名'
         }, {
-          dataItem: 'terminal',
-          dataName: '终端'
+          dataItem: 'phone',
+          dataName: '电话'
         }, {
-          dataItem: 'visitTime',
-          dataName: '访问时间'
+          dataItem: 'email',
+          dataName: '邮箱'
         }, {
-          dataItem: 'visitDuration',
-          dataName: '访问时常'
+          dataItem: 'level',
+          dataName: '客户等级'
         }, {
-          dataItem: 'ip',
-          dataName: 'ip地址'
-        }, {
-          dataItem: 'state',
-          dataName: '访客状态'
+          dataItem: 'channel',
+          dataName: '客户来源'
         }],
 		options: [{
-		  value: '全部客服',
-		  label: '全部客服'
+		  value: '全部等级',
+		  label: '全部等级'
 		}, {
-		  value: '王美美',
-		  label: '王美美'
+		  value: '普通客户',
+		  label: '普通客户'
 		}, {
-		  value: '七尾',
-		  label: '七尾'
+		  value: 'VIP客户',
+		  label: 'VIP客户'
 		}, {
-		  value: '李想',
-		  label: '李想'
-		}, {
-		  value: '王之',
-		  label: '王之'
+		  value: '潜在客户',
+		  label: '潜在客户'
 		}],
 		options2: [{
 		  value: '全部来源',
@@ -159,27 +157,15 @@
 		  value: '手机',
 		  label: '手机'
 		}],
-		options3: [{
-		  value: '全部终端',
-		  label: '全部终端'
-		}, {
-		  value: 'chrome',
-		  label: 'chrome'
-		}, {
-		  value: 'app',
-		  label: 'app'
-		}, {
-		  value: '小程序',
-		  label: '小程序'
-		}],
         value: '',
 		value2:'',
 		value3:''
       }
     },
 	created:function(){
+		debugger
 			this.$axios
-			.get('/visitor/select')
+			.get('/cInfo/select')
 			.then(resp=>{
 				let {data} = resp;
 				this.tables = data.result;
@@ -187,17 +173,17 @@
 		},
 	methods: {
 		selectModel(value){
-			let nickName = value;
-			if(nickName == '全部客服'){
+			let level = value;
+			if(level == '全部等级'){
 				this.$axios
-				.get('/visitor/select')
+				.get('/cInfo/select')
 				.then(resp=>{
 						let {data} = resp;
 						this.tables = data.result;
 				})
 			}else{
 				this.$axios
-				.get(`/visitor/select?nickName=${nickName}`)
+				.get(`/cInfo/select?level=${level}`)
 				.then(resp=>{
 						let {data} = resp;
 						this.tables = data.result;
@@ -208,32 +194,14 @@
 			let browser = value2;
 			if(browser == '全部来源'){
 				this.$axios
-					.get('/visitor/select')
+					.get('/cInfo/select')
 					.then(resp=>{
 						let {data} = resp;
 						this.tables = data.result;
 				})
 			}else{
 				this.$axios
-					.get(`/visitor/select?browser=${browser}`)
-					.then(resp=>{
-						let {data} = resp;
-						this.tables = data.result;
-				})
-			}
-	},
-	selectModel3(value3){
-			let terminal = value3;
-			if(terminal == '全部终端'){
-				this.$axios
-					.get('/visitor/select')
-					.then(resp=>{
-						let {data} = resp;
-						this.tables = data.result;
-				})
-			}else{
-				this.$axios
-					.get(`/visitor/select?terminal=${terminal}`)
+					.get(`/cInfo/select?browser=${browser}`)
 					.then(resp=>{
 						let {data} = resp;
 						this.tables = data.result;
@@ -256,22 +224,30 @@
 	  		let beginTime = newVal[0];
 	  		let endTime = newVal[1];
 	  		this.$axios
-	  			.get(`/visitor/select?beginTime=${beginTime}&endTime=${endTime}`)
+	  			.get(`/cInfo/select?beginTime=${beginTime}&endTime=${endTime}`)
 	  			.then(resp=>{
 	  				let {data} = resp;
 	  				this.tables = data.result;
 	  		})
 	  		},
 		selectModel5(){
-			debugger
 				let visitorName = this.myinputs;
 				this.$axios
-					.get(`/visitor/select?visitorName=${visitorName}`)
+					.get(`/cInfo/select?visitorName=${visitorName}`)
 					.then(resp=>{
 						let {data} = resp;
 						this.tables = data.result;
 				})
 				},
+		handleSizeChange: function(size) {
+			this.pagesize = size;
+			/*console.log(this.pagesize) */
+		},
+		//点击第几页
+		handleCurrentChange: function(currentPage) {
+			this.currentPage = currentPage;
+			/*console.log(this.currentPage) */
+		},
 	}
   }
 </script>

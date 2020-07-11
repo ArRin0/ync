@@ -62,7 +62,7 @@
 				</div>
 			<div class="boxShadow">
 			    <el-table
-			      :data="tables"
+			      :data="tables.slice((currentPage-1)*pagesize,currentPage*pagesize)"
 			      ref="multipleTable"
 			      tooltip-effect="dark"
 			      style="width: 100% "
@@ -86,6 +86,19 @@
 			        </template>
 			      </el-table-column>
 			    </el-table>
+				<div class="pagination">
+					<el-pagination 
+						@size-change="handleSizeChange" 
+						@current-change="handleCurrentChange" 
+						:current-page="currentPage" 
+						:page-sizes="[5, 10, 20, 40]" 
+						:page-size="pagesize" 
+						layout="total, sizes,prev, pager, next" 
+						:total="tables.length" 
+						prev-text="上一页" 
+						next-text="下一页">
+					</el-pagination>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -105,6 +118,8 @@
 	  },
     data () {
       return {
+		currentPage: 1, //默认显示页面为1
+		pagesize: 5, //    每页的数据条数
 		rangeDate: [] ,
         tables: [],
 		myinputs:'',
@@ -272,6 +287,15 @@
 						this.tables = data.result;
 				})
 				},
+		handleSizeChange: function(size) {
+			this.pagesize = size;
+			/*console.log(this.pagesize) */
+		},
+		//点击第几页
+		handleCurrentChange: function(currentPage) {
+			this.currentPage = currentPage;
+			/*console.log(this.currentPage) */
+		},
 	}
   }
 </script>
