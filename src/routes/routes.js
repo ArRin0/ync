@@ -34,7 +34,7 @@ const routes = [{
 	},
 	{
 		path: '/test',
-		component: () => import('@/components/LeftListOfData.vue'),
+		component: () => import('@/components/LeftListOfSetting.vue'),
 	},
 ]
 

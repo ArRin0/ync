@@ -47,7 +47,7 @@
 	
 	.workOrder{
 		width: 240px;
-		height: 892px;
+		height: 700px;
 		background-color: #FFFFFF;
 		font-size: 14px;
 		font-weight: 400;
