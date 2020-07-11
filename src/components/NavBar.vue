@@ -2,16 +2,16 @@
 	<div class="nav">
 		<div class="logo">Logo</div>
 		<div class="menu">
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-i-home"></i></router-link><div class="text">首页</div></div>
-			<div class="menu-item"><router-link to="/index/current-session"><i class="iconfont icon-msg"></i></router-link><div class="text">消息</div></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-cc-users"></i></router-link><div class="text">客户</div></div>
-			<div class="menu-item"><router-link to="/index/history-session"><i class="iconfont icon-history"></i></router-link><div class="text">历史</div></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-customer"></i></router-link><div class="text">客户</div></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-order"></i></router-link><div class="text">订单</div></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-statics"></i></router-link><div class="text">统计</div></div>
-			<div class="menu-item separate-line"><i class="iconfont icon-fengexian"></i></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-Settingscontroloptions"></i></router-link><div class="text">设置</div></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-logout"></i></router-link><div class="text">退出</div></div>
+			<div class="menu-item"><router-link to=""><i class="iconfont icon-shouye7"></i></router-link><div class="text">首页</div></div>
+			<div class="menu-item"><router-link to="/index/current-session"><i class="iconfont icon-gongdanguanli"></i></router-link><div class="text">消息</div></div>
+			<div class="menu-item"><router-link to=""><i class="iconfont icon-icon-test"></i></router-link><div class="text">客户</div></div>
+			<div class="menu-item"><router-link to="/index/history-session"><i class="iconfont icon-lishi"></i></router-link><div class="text">历史</div></div>
+			<div class="menu-item"><router-link to=""><i class="iconfont icon-yonghu"></i></router-link><div class="text">客户</div></div>
+			<div class="menu-item"><router-link to=""><i class="iconfont icon-gongdan"></i></router-link><div class="text">订单</div></div>
+			<div class="menu-item"><router-link to=""><i class="iconfont icon-tongji"></i></router-link><div class="text">统计</div></div>
+			<div class="menu-item separate-line"><i class="iconfont icon-hengxian"></i></div>
+			<div class="menu-item"><router-link to=""><i class="iconfont icon-shezhi"></i></router-link><div class="text">设置</div></div>
+			<div class="menu-item"><router-link to=""><i class="iconfont icon-tubiaoshangchuanmoban"></i></router-link><div class="text">退出</div></div>
 		</div>
 	</div>
 </template>
@@ -31,14 +31,13 @@
 <style>
 	/* 菜单 */
 	.nav{
-		position: fixed;
+		position: absolute;
 		left: 0;
 		top: 0;
 		width: 64px;
 		height: 100vh;
 		background-color: #000;
 		border: 1px solid #797979;
-		z-index: 999;
 	}
 	.logo{
 		margin: 29px auto 20px;
@@ -62,6 +61,7 @@
 		height: 56px;
 		line-height: 56px;
 		text-align: center;
+		text-decoration:none;
 		color: #FFFFFF;
 		cursor: pointer;
 	}
@@ -69,7 +69,7 @@
 		color: #fff;
 	}
 	.menu .menu-item.separate-line{
-		/* cursor: ; */
+		color: dimgrey;
 	}
 	.menu i{
 		font-size: 20px;
@@ -100,5 +100,6 @@
 		width: 0;
 		height: 0;
 		border: transparent 8px solid;
+		border-right-color: #000000;
 	}
 </style>

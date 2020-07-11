@@ -33,12 +33,11 @@
 <style>
 	.top{
 		position: fixed;
+		/* 置顶不管如何滑动都能看的到 */
 		height: 64px;
-		width: 100%;
 		background-color: #FFFFFF;
 		/* border: 1px solid #797979; */
 		display: flex;
-		z-index: 998;
 	}
 	.top .h3{
 		font-family: Arial Regular, Arial, sans-serif;
