@@ -93,8 +93,8 @@
 
 </template>
 <script>
-	import NavBar from './components/NavBar.vue'
-	import GHeader from './components/Header.vue'
+	import NavBar from '@/components/NavBar.vue'
+	import GHeader from '@/components/Header.vue'
 	
 	
   export default {
