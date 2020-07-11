@@ -31,13 +31,19 @@
 <style>
 	/* 菜单 */
 	.nav{
-		position: absolute;
+		position: fixed;
 		left: 0;
 		top: 0;
 		width: 64px;
-		height: 100vh;
+		height: 722px;
 		background-color: #000;
 		border: 1px solid #797979;
+	}
+	.router-link-active{
+		text-decoration:none;
+	}
+	i{
+		text-decoration:none;
 	}
 	.logo{
 		margin: 29px auto 20px;
