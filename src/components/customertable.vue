@@ -1,7 +1,7 @@
 <template>
 		<div class="myf">
 			<div class="la">
-				<label>客服</label>
+				<label>客服监控</label>
 			</div>
 			<div class="boxShadow">
 			    <el-table

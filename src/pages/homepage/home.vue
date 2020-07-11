@@ -79,7 +79,7 @@
 			</div>
 			
 			<div class="item4">
-				<div class="text">客服监控</div>
+				<Table></Table>
 			</div>
 		</div>
 	</div>
@@ -88,12 +88,14 @@
 <script>
 	import NavBar from '@/components/NavBar.vue'
 	import GHeader from '@/components/Header.vue'
+	import Table from '@/components/customertable.vue'
 
 	export default {
 		name: "Index",
 		components: {
 			NavBar,
-			GHeader
+			GHeader,
+			Table
 		}
 	}
 </script>
