@@ -21,8 +21,12 @@ const routes = [{
 		component: () => import('@/pages/login/login'),
 	},
 	{
-		path: '/from',
-		component: () => import('@/pages/mf/from'),
+		path: '/visit',
+		component: () => import('@/pages/mf/visittable'),
+	},
+	{
+		path: '/customer',
+		component: () => import('@/pages/mf/customer'),
 	},
 	{
 		path: '/test',
