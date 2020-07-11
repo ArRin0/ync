@@ -21,6 +21,10 @@ const routes = [{
 		component: () => import('@/pages/login/login'),
 	},
 	{
+		path: '/home',
+		component: () => import('@/pages/homepage/home'),
+	},
+	{
 		path: '/visit',
 		component: () => import('@/pages/mf/visittable'),
 	},
