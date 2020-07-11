@@ -32,10 +32,10 @@ const routes = [{
 		path: '/customer',
 		component: () => import('@/pages/mf/customer'),
 	},
-	// {
-	// 	path: '/test',
-	// 	component: () => import('@/pages/mf/trytable'),
-	// },
+	{
+		path: '/test',
+		component: () => import('@/components/LeftListOfData.vue'),
+	},
 ]
 
 export default routes;
