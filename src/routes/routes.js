@@ -34,7 +34,7 @@ const routes = [{
 	},
 	{
 		path: '/test',
-		component: () => import('@/components/LeftListOfSetting.vue'),
+		component: () => import('@/components/customertable'),
 	},
 ]
 

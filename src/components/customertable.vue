@@ -1,5 +1,8 @@
 <template>
 		<div class="myf">
+			<div class="la">
+				<label>客服</label>
+			</div>
 			<div class="boxShadow">
 			    <el-table
 			      :data="tables.slice((currentPage-1)*pagesize,currentPage*pagesize)"
@@ -143,6 +146,15 @@
 	.myinput{
 		display: inline-block;
 		margin-left: 20px;
+	}
+	.la{
+		font-size: 18px;
+		font-weight: 400;
+		color: #333333;
+		line-height: normal;
+		font-feature-settings: "kern";
+		padding-left: 20px;
+		padding-top: 20px;
 	}
 </style>
  
