@@ -55,8 +55,6 @@
 		font-size: 14px;
 		font-weight: 400;
 		color: #333333;
-		position: absolute;
-		top: 74px;
 	}
 	
 	.workOrder .item{

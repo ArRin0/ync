@@ -61,6 +61,8 @@
 		height: 70px;
 	}
 	.box1{
+		display: flex;
+		flex-wrap: wrap;
 		padding-left: 22pxpx;
 	}
 	.text{

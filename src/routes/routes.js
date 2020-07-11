@@ -37,8 +37,28 @@ const routes = [{
 		component: () => import('@/pages/static/data'),
 	},
 	{
+		path: '/workload',
+		component: () => import('@/pages/static/workload'),
+	},
+	{
+		path: '/workmanship',
+		component: () => import('@/pages/static/workmanship'),
+	},
+	{
+		path: '/attendance',
+		component: () => import('@/pages/static/attendance'),
+	},
+	{
+		path: '/visits',
+		component: () => import('@/pages/static/visits'),
+	},
+	{
+		path: '/pcdialog',
+		component: () => import('@/pages/settings/dialog/pcdialog'),
+	},
+	{
 		path: '/test',
-		component: () => import('@/components/customertable'),
+		component: () => import('@/pages/static/components/column'),
 	},
 ]
 
