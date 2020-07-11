@@ -46,12 +46,17 @@
 	}
 	
 	.workOrder{
+		position: fixed;
+		top: 74px;
+		left: 74px;
 		width: 240px;
-		height: 700px;
+		height: 630px;
 		background-color: #FFFFFF;
 		font-size: 14px;
 		font-weight: 400;
 		color: #333333;
+		position: absolute;
+		top: 74px;
 	}
 	
 	.workOrder .item{

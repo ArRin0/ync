@@ -33,6 +33,10 @@ const routes = [{
 		component: () => import('@/pages/mf/customer'),
 	},
 	{
+		path: '/data',
+		component: () => import('@/pages/static/data'),
+	},
+	{
 		path: '/test',
 		component: () => import('@/components/customertable'),
 	},
