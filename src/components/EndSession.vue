@@ -17,13 +17,13 @@
 
 <script>
 	 export default {
-		name:"CreateWorkOrder",
+		name:"EndSession",
 		data() {
 	      return {
 	        dialogFormVisible: false,
 	        form: {
 			
-			  description: '',
+				description: '',
 
 	        },
 	        formLabelWidth: '240px'

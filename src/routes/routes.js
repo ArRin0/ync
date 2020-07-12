@@ -68,6 +68,10 @@ const routes = [{
 		path: '/createBlack',
 		component: () => import('@/components/black.vue'),
 	},
+	{
+		path: '/endSession',
+		component: () => import('@/components/EndSession.vue'),
+	},
 ]
 
 export default routes;

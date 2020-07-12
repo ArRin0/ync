@@ -23,13 +23,17 @@
 	      return {
 	        dialogFormVisible: false,
 	        form: {
-				customerServiceId:'13',
+				customerServiceId:'',
 				reason: '',
 				customerId:'12',
 	        },
 	        formLabelWidth: '120px'
 	      };
 	    },
+		created:function(){
+				let suser = localStorage.getItem("user");
+				this.form.customerServiceId=JSON.parse(suser).customerServiceId;
+			},
 		methods:{
 			doSubmit:function(data){
 				console.log(this.form);

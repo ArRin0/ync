@@ -2,7 +2,7 @@
 	<form action="">
 		<h3>{{type}}极客营客服云</h3>
 
-		<div class="item"><label for="">账号</label><input type="text" v-model="customerServicePhone" placeholder="请输入手机号或邮箱"></div>
+		<div class="item"><label for="">账号</label><input type="text" v-model="phone" placeholder="请输入手机号或邮箱"></div>
 		<div class="item"><label for="">密码</label><input type="password" v-model="password" placeholder="请输入密码"></div>
 		<div class="item" v-if="type=='注册'"><label for="">验证码</label><input type="code" v-model="code" placeholder="请输入验证码"><img class="img" src=""></div>
 		<div class="tip" v-if="isLoginForm">忘记密码请联系客服</div>
@@ -28,6 +28,7 @@
 		},
 		methods:{
 			doSubmit(){
+				debugger
 				let phone = this.phone;
 				let password = this.password;
 				// 告诉父组件，abcEvent已经发生了
