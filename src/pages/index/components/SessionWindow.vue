@@ -94,12 +94,10 @@
 			<div class="session-util-tab">
 				<dl>
 					<dt class="tabs">
-						<span class="tab-title active">资料</span>
-						<span class="tab-title">常用语</span>
-						<span class="tab-title">历史工单</span>
+						<span :class="activeClass ==k?'tab-title active':'tab-title'" v-for="(title,k) in titles" @click="IsActive(k)">{{title.name}}</span>
 					</dt>
 					<dd>
-						<div class="tab-content active">
+						<div :class="activeClass ==0?'tab-content active':'tab-content'">
 							<dl class="customer-device">
 								<dt>访客信息</dt>
 								<dd><span class="label">来源</span><span class="item">113.128.230.51</span></dd>
@@ -109,7 +107,67 @@
 								<dd><span class="label">设备</span><span class="item">Mac</span></dd>
 							</dl>
 							<dl class="customer-info">
-								<dt>客户信息<button><i class="iconfont icon-2bianji"></i>编辑</button></dt>
+								<dt>客户信息
+								<div class="box">
+										<span class="dialog-btn" @click="dialogFormVisible = true">编辑</span>
+										<el-dialog title="编辑客户信息" :visible.sync="dialogFormVisible" class="abow_dialog">
+										  <el-form :model="form">
+											  <el-form-item label="客户名称" :label-width="formLabelWidth">
+												<el-input v-model="form.username" autocomplete="off" placeholder="请输入"></el-input>
+											  </el-form-item>
+											  
+											  <el-form-item label="真实姓名" :label-width="formLabelWidth">
+												<el-input v-model="form.realname" autocomplete="off" placeholder="请输入"></el-input>
+											  </el-form-item>
+											  
+											  
+											  <el-form-item label="客户电话" :label-width="formLabelWidth">
+												<el-input v-model="form.phone" autocomplete="off" placeholder="请输入"></el-input>
+											  </el-form-item>
+											 
+											  <el-form-item label="客户邮箱" :label-width="formLabelWidth">
+												<el-input v-model="form.email" autocomplete="off" placeholder="请输入"></el-input>
+											  </el-form-item>
+											  <el-form-item label="客户公司" :label-width="formLabelWidth">
+												<el-input v-model="form.corporation" autocomplete="off" placeholder="请输入"></el-input>
+											  </el-form-item>
+											 
+											  <el-form-item label="客户地址" :label-width="formLabelWidth">
+												<el-input v-model="form.address" autocomplete="off" placeholder="请输入"></el-input>
+											  </el-form-item>
+											  
+											  <el-form-item label="客户等级" :label-width="formLabelWidth">
+											    <el-select v-model="form.level" placeholder="请选择">
+											  	<el-option label="普通客户" value="1"></el-option>
+											  	<el-option label="VIP客户" value="2"></el-option>
+											  	<el-option label="潜在客户" value="3"></el-option>
+											    </el-select>
+											  </el-form-item>
+											  
+											  <el-form-item label="客户来源" :label-width="formLabelWidth">
+											    <el-select v-model="form.source" placeholder="请选择">
+											  	<el-option label="客服录入" value="1"></el-option>
+											  	<el-option label="网页介入" value="2"></el-option>
+											    </el-select>
+											  </el-form-item>
+											
+											<el-form-item label="选择标签" :label-width="formLabelWidth">
+											  <el-radio v-model="form.radio" label="1">潜在客户</el-radio>
+											  <el-radio v-model="form.radio" label="2">上市公司</el-radio>
+											</el-form-item>
+										
+											<el-form-item label="客户备注" :label-width="formLabelWidth">
+											  <el-input type="textarea" v-model="form.description" autocomplete="off"  placeholder="请输入"></el-input>
+											</el-form-item>
+											
+										</el-form>
+										  <div slot="footer" class="dialog-footer">
+										    <el-button @click="dialogFormVisible = false">取 消</el-button>
+										    <el-button type="primary" @click="dialogFormVisible = false">保 存</el-button>
+											</div>
+										</el-dialog>
+									</div>
+								</dt>
 								<dd><span class="label">客户名称</span><span class="item">北京市客户</span></dd>
 								<dd><span class="label">真实姓名</span><span class="item">王伟</span></dd>
 								<dd><span class="label">客户电话</span><span class="item">—</span></dd>
@@ -122,8 +180,19 @@
 								<dd><span class="label">客户标签</span><span class="item"><span>已上市</span><span>潜在客户</span></span></dd>
 							</dl>
 						</div>
-						<div class="tab-content active">常用语</div>
-						<div class="tab-content">
+						<div :class="activeClass ==1?'tab-content active':'tab-content'">
+							<el-collapse v-model="activeName" accordion>
+							  <el-collapse-item title="礼貌性常用语" name="1">
+							    <div class="common">很高兴为您服务，祝您生活愉快！</div>
+							    <div class="common">不客气，这是我应该的！</div>
+							  </el-collapse-item>
+							  <el-collapse-item title="常见问题回答" name="2">
+							    <div class="common">目前人有些多，麻烦您等待一会呢</div>
+							    <div class="common">好的，这就为您办理该业务</div>
+							  </el-collapse-item>
+							</el-collapse>
+						</div>
+						<div :class="activeClass ==2?'tab-content active':'tab-content'">
 							<dl class="customer-info">
 								<dt>工单信息</dt>
 								<dd><span class="label">工单标题</span><span class="item">分类一</span></dd>
@@ -136,7 +205,7 @@
 								<dd><span class="label">受理客户</span><span class="item">王先生</span></dd>
 								<dd><span class="label">创建时间</span><span class="item">2020/06/09 20:09</span></dd>
 								<dd><span class="label">更新时间</span><span class="item">2020/06/09 20:09</span></dd>
-								<dd class="detail">查看工单时间<i class="iconfont icon-xiangqing"></i></dd>
+								<dd class="detail">查看工单详情<i class="iconfont icon-xiangqing"></i></dd>
 							</dl>
 						</div>
 					</dd>
@@ -150,10 +219,41 @@
 	export default{
 		name:"SessionWindow",
 		props:["sessionId"],
+		data:function(){
+			return {
+				activeClass: 0,// 0为默认选择第一个，-1为不选择
+				activeName: '1',
+				titles:[
+				    {name: '资料'},
+				    {name: '常用语'},
+					{name: '历史工单'},
+				],
+				dialogFormVisible: false,
+				form: {
+				  username:'',
+				  realname: '',
+				  email: '',
+				  phone: '',
+				  level:'',
+				  source:'',
+				  radio: '-1',
+				  corporation:'',
+				  address:'',
+				},
+				formLabelWidth: '120px',
+			}
+		},
+		
 		created:function() {
 			//根据sessionId查询出这个session相关的消息
 			console.log(this.sessionId)
+		},
+		methods: {
+		      IsActive(k) {
+		        this.activeClass = k;
+		      }
 		}
+		
 	}
 </script>
 
@@ -282,6 +382,9 @@
 	}
 	
 	/* 选项卡 */
+	.tab-title:hover{
+		cursor:pointer;
+	}
 	.session-util-tab .tabs{
 		display: flex;
 		justify-content: space-between;
@@ -314,11 +417,15 @@
 		color: rgb(51,51,51);
 		margin-bottom: 16px;
 	}
-	.tab-content dt button{
+	.box>span{
 		float: right;
 		background-color: transparent;
 		border-style: none;
 		color: #006EFF;
+		font-size: 14px;
+	}
+	.box>span:hover{
+		cursor: pointer;
 	}
 	.tab-content dt button i{
 		margin-right: 10px;
@@ -351,5 +458,20 @@
 		text-align: right;
 		color: #006EFF;
 		cursor: pointer;
+	}
+	.common:hover{
+		cursor: pointer;
+		background-color: rgba(0, 110, 255, 0.098);
+	}
+	.common{
+		height: 40px;
+		width: 340px;
+		line-height: 40px;
+		font-size: 13px;
+		font-weight: 400;
+		padding-left: 20px;
+		border:1px solid hsla(0,0%,100%,.5 );
+		background:white;
+		background-clip:padding-box;
 	}
 </style>

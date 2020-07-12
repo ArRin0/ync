@@ -1,5 +1,17 @@
 <template>
 	<div class="myf">
+		<div class="timelay">
+			<el-date-picker
+			      v-model="rangeDate"
+			      prefix-icon="el-icon-date"
+			      type="daterange"
+			      start-placeholder="开始日期"
+			      end-placeholder="结束日期"
+			      size="small"
+			      value-format="yyyy-MM-dd"
+				  @change="selectModel4($event)"
+			></el-date-picker>
+		</div>
 		    <div class="layui-inline">
 			    <div class="layui-input-inline"  >
 				<el-select v-model="value" @change="selectModel($event)" filterable collapse-tags   placeholder="全部客服">
@@ -14,7 +26,7 @@
 		    </div>
 			<div class="layui-inline">
 			    <div class="layui-input-inline" >
-				<el-select v-model="value2" @change="selectModel2($event)" filterable collapse-tags   placeholder="全部来源">
+				<el-select v-model="value2" @change="selectModel2($event)" filterable collapse-tags   placeholder="全部客服组">
 				<el-option
 				      v-for="item in options2"
 				      :key="item.value"
@@ -23,39 +35,6 @@
 				    </el-option>
 				</el-select>
 			    </div>
-			</div>
-			<div class="layui-inline">
-			    <div class="layui-input-inline" >
-				<el-select v-model="value3" @change="selectModel3($event)" filterable collapse-tags   placeholder="全部终端">
-				<el-option
-				      v-for="item in options3"
-				      :key="item.value"
-				      :label="item.label"
-				      :value="item.value">
-				    </el-option>
-				</el-select>
-			    </div>
-			</div>
-			<div class="timelay">
-				<el-date-picker
-				      v-model="rangeDate"
-				      prefix-icon="el-icon-date"
-				      type="daterange"
-				      start-placeholder="开始日期"
-				      end-placeholder="结束日期"
-				      size="small"
-				      value-format="yyyy-MM-dd"
-					  @change="selectModel4($event)"
-				></el-date-picker>
-			</div>
-			<div class="myinput">
-				<el-input placeholder="输入关键词搜索"
-							prefix-icon="el-icon-search"
-							v-model="myinputs">
-				</el-input>
-			</div>
-			<div class="myinput">
-				<el-button type="primary" round @click="selectModel5($event)">搜索</el-button>
 			</div>
 		</div>
 </template>
@@ -122,17 +101,17 @@
 			  label: '手机'
 			}],
 			options3: [{
-			  value: '全部终端',
-			  label: '全部终端'
+			  value: '全部客服组',
+			  label: '全部客服组'
 			}, {
-			  value: 'chrome',
-			  label: 'chrome'
+			  value: '客服组一',
+			  label: '客服组一'
 			}, {
-			  value: 'app',
-			  label: 'app'
+			  value: '客服组二',
+			  label: '客服组二'
 			}, {
-			  value: '小程序',
-			  label: '小程序'
+			  value: '客服组三',
+			  label: '客服组三'
 			}],
 		    value: '',
 			value2:'',

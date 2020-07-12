@@ -1,10 +1,10 @@
 <template>
 	<div class="page">
 		<nav-bar></nav-bar>
-		<g-header></g-header>
+		<g-header name="数据总览"></g-header>
 		<leftlist></leftlist>
 		<div class="container">
-			<div class="choice"></div>
+			<div class="choice"><drop></drop></div>
 			<div class="box1">
 				<block type1="总会话量" type2="230" type3="有效会话数200"></block>
 				<block type1="总客户量" type2="30" type3="有效客户20"></block>
@@ -17,6 +17,12 @@
 				<block type1="平均每会话消息数" type2="28" type3="平均每会话有效消息数15"></block>
 			</div>
 			<div class="text">会话数</div>
+			<div></div>
+			<div class="box2">
+				<div class="col"><piech :id="'bar2'" :data="objectData2"></piech></div>
+				<div class="col"><piech :id="'bar3'" :data="objectData3"></piech></div>
+			</div>
+			
 		</div>
 	</div>
 </template>
@@ -26,6 +32,8 @@
 	import NavBar from '@/components/NavBar.vue'
 	import GHeader from '@/components/Header.vue'
 	import block from './components/block.vue'
+	import piech from './components/piechart.vue'
+	import drop from '@/components/drop.vue'
 	
 	export default {
 		name: "data",
@@ -33,7 +41,73 @@
 			leftlist,
 			NavBar,
 			GHeader,
-			block
+			block,
+			piech,
+			drop
+		},
+		data() {
+			return{
+				objectData2:{
+					textTile: "客户来源占比",
+					nameArray: ['网页', 'APP','小程序','公众号','头条号'],
+					series: [{
+						name: '来源',
+						type: 'pie',
+						radius:['35%', '60%'],
+						avoidLabelOverlap: false,
+						label: {
+							show: false,
+							position: 'center'
+						},
+						emphasis:{
+							label:{
+								show: true,
+								fontSize: '20',
+								fontWeight: 'bold',
+							}
+						},
+						labelLine:{
+							show:false
+						},
+						data: [
+							{value: 880, name: '网页', itemStyle:{color:'rgb(26, 125, 254)'}},
+							{value: 300, name: 'APP', itemStyle:{color:'rgb(255, 145, 56)'}},
+							{value: 200, name: '小程序', itemStyle:{color:'rgb(153, 153, 255)'}},
+							{value: 130, name: '公众号', itemStyle:{color:'rgb(46, 212, 119)'}},
+							{value: 60, name: '头条号', itemStyle:{color:'rgb(255, 98, 98)'}},
+						],
+					}],
+				},
+				objectData3:{
+					textTile: "评价占比",
+					nameArray: ['好评', '中评', '差评'],
+					series: [{
+						name: '评价',
+						type: 'pie',
+						radius:['35%', '60%'],
+						avoidLabelOverlap: false,
+						label: {
+							show: false,
+							position: 'center'
+						},
+						emphasis:{
+							label:{
+								show: true,
+								fontSize: '20',
+								fontWeight: 'bold',
+							}
+						},
+						labelLine:{
+							show:false
+						},
+						data: [
+							{value: 180, name: '好评', itemStyle:{color:'rgb(46, 212, 119)'}},
+							{value: 99, name: '中评', itemStyle:{color:'rgb(26, 125, 254)'}},
+							{value: 25, name: '差评', itemStyle:{color:'rgb(255, 98, 98)'}},
+						],
+					}],
+				}
+			}
 		}
 	}
 </script>
@@ -73,5 +147,16 @@
 		top: 22px;
 		font-size: 18px;
 		font-weight: 400;
+	}
+	.box2{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-left: 22pxpx;
+	}
+	.col{
+		width: 435px;
+		height: 400px;
+		margin-top: 50px;
 	}
 </style>
