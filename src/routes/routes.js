@@ -57,10 +57,6 @@ const routes = [{
 		component: () => import('@/pages/settings/dialog/pcdialog'),
 	},
 	{
-		path: '/test',
-		component: () => import('@/components/drop.vue'),
-	},
-	{
 		path: '/createWorkOrder',
 		component: () => import('@/components/CreateWorkOrder.vue'),
 	},
@@ -75,6 +71,10 @@ const routes = [{
 	{
 		path: '/addCustomer',
 		component: () => import('@/components/AddCustomer.vue'),
+	},
+	{
+		path: '/test',
+		component: () => import('@/components/drop.vue'),
 	},
 ]
 

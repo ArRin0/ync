@@ -1,10 +1,10 @@
 <template>
 	<div class="page">
 		<nav-bar></nav-bar>
-		<g-header></g-header>
+		<g-header name="访问统计"></g-header>
 		<leftlist></leftlist>
 		<div class="container">
-			<div class="choice"></div>
+			<div class="choice"><drop></drop></div>
 			<div class="box1">
 				<block type1="浏览量(PV)" type2="2300" type3="平均浏览页面20"></block>
 				<block type1="访客量(UV)" type2="30" type3="跳出率20%"></block>
@@ -22,14 +22,16 @@
 	import NavBar from '@/components/NavBar.vue'
 	import GHeader from '@/components/Header.vue'
 	import block from './components/block.vue'
+	import drop from '@/components/drop.vue'
 	
 	export default {
-		name: "data",
+		name: "visits",
 		components: {
 			leftlist,
 			NavBar,
 			GHeader,
-			block
+			block,
+			drop
 		}
 	}
 </script>
