@@ -58,7 +58,7 @@ const routes = [{
 	},
 	{
 		path: '/test',
-		component: () => import('@/components/TransferOrder.vue'),
+		component: () => import('@/components/drop.vue'),
 	},
 	{
 		path: '/createWorkOrder',
