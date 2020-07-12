@@ -58,7 +58,7 @@ const routes = [{
 	},
 	{
 		path: '/test',
-		component: () => import('@/components/EndSession.vue'),
+		component: () => import('@/components/AddCustomer.vue'),
 	},
 ]
 
