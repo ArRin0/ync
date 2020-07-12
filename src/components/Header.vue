@@ -33,6 +33,7 @@
 
 <style>
 	.top{
+		padding-left: 64px;
 		position: fixed;
 		z-index: 998;
 		/* 置顶不管如何滑动都能看的到 */
