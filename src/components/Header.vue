@@ -1,6 +1,6 @@
 <template>
 	<div class="top">
-		<div class="h3">首页</div>
+		<div class="h3">{{name}}</div>
 		<div class="users-info">
 			<div class="user-msg msg"><i class="iconfont icon-lingdang"></i></div>
 			<div class="user-img"><img src="img/u94.svg" ></div>
@@ -17,6 +17,7 @@
 
 <script>
 	export default{
+		props:["name"],
 		name:"GHeader",
 		data:function(){
 			return {
@@ -33,8 +34,10 @@
 <style>
 	.top{
 		position: fixed;
+		z-index: 998;
 		/* 置顶不管如何滑动都能看的到 */
 		height: 64px;
+		width: 100%;
 		background-color: #FFFFFF;
 		/* border: 1px solid #797979; */
 		display: flex;
