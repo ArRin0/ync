@@ -1,7 +1,7 @@
 <template>
 	<div class="box">
 		<el-button type="text" @click="dialogFormVisible = true"><span class="dialog-btn"><i class="iconfont icon-weibiaoti1"></i>创建工单</span></el-button>
-		<el-dialog title="新建工单" :visible.sync="dialogFormVisible">
+		<el-dialog title="新建工单" :visible.sync="dialogFormVisible" class="abow_dialog">
 		 
 		  <el-form :model="form">
 			<el-form-item label="工单分类" :label-width="formLabelWidth">
@@ -108,4 +108,17 @@
 		margin-bottom:40px;
 		color: #006EFF;
 	}
+	body{
+		height: 100hv;
+	}
+	.abow_dialog {
+    .el-dialog {
+		display:flex;
+		flex-direction:column;
+        .el-dialog__body {
+			overflow: auto;
+			width: 600px;
+        }
+    }
+}
 </style>

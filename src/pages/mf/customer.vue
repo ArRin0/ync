@@ -163,7 +163,6 @@
       }
     },
 	created:function(){
-		debugger
 			this.$axios
 			.get('/cInfo/select')
 			.then(resp=>{

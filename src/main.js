@@ -7,6 +7,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 // 导入axios，并创建实例
 import axios from 'axios'
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
+
 const instance = axios.create({
   baseURL: 'http://localhost:8080/ccs',
   timeout: 1000
