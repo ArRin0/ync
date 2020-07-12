@@ -58,7 +58,7 @@ const routes = [{
 	},
 	{
 		path: '/test',
-		component: () => import('@/components/DeleteCustomer.vue'),
+		component: () => import('@/components/ChangeState.vue'),
 	},
 	{
 		path: '/createWorkOrder',
