@@ -58,7 +58,7 @@ const routes = [{
 	},
 	{
 		path: '/test',
-		component: () => import('@/components/Block.vue'),
+		component: () => import('@/components/EndSession.vue'),
 	},
 ]
 
