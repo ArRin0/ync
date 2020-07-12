@@ -4,7 +4,7 @@
 		<div class="menu">
 			<div class="menu-item"><router-link to=""><i class="iconfont icon-shouye7"></i></router-link><div class="text">首页</div></div>
 			<div class="menu-item"><router-link to="/index/current-session"><i class="iconfont icon-gongdanguanli"></i></router-link><div class="text">消息</div></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-icon-test"></i></router-link><div class="text">访客</div></div>
+			<div class="menu-item"><router-link to=""><i class="iconfont icon-icon-test"></i></router-link><div class="text">客户</div></div>
 			<div class="menu-item"><router-link to="/index/history-session"><i class="iconfont icon-lishi"></i></router-link><div class="text">历史</div></div>
 			<div class="menu-item"><router-link to=""><i class="iconfont icon-yonghu"></i></router-link><div class="text">客户</div></div>
 			<div class="menu-item"><router-link to=""><i class="iconfont icon-gongdan"></i></router-link><div class="text">订单</div></div>

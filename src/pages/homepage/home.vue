@@ -1,7 +1,7 @@
 <template>
 	<div class="page">
 		<nav-bar></nav-bar>
-		<g-header name="首页"></g-header>
+		<g-header></g-header>
 		<div class="main-area">
 			<div class="item0"><h2 class="htext">客服七尾，欢迎回来！</h2></div>
 			
