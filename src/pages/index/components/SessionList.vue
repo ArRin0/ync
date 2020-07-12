@@ -7,7 +7,7 @@
 					<i class="iconfont icon-beizit"></i>
 				</div>
 				<div class="msg-info">
-					<div class="user-info"><span class="user">{{session.visitorName}}</span><span class="msg-time">{{session.createTime}}</span></div>
+					<div class="user-info"><span class="user">{{session.visitorName}}</span><span class="msg-time">{{session.creatTime}}</span></div>
 					<div class="msg-latest">{{session.content}}</div>
 				</div>
 			</dd>
@@ -38,7 +38,7 @@
 			let customerServiceId = user.id;
 			let tp = (this.type=='current')?0:1;//是否为历史会话的标示
 			this.$axios
-			.get(`/session/list?customerServiceId=${customerServiceId}&type=${tp}&pageNum=1`)
+			.get(`/session/select?customerServiceId=${customerServiceId}`)
 			.then(resp=>{
 				let {data} = resp;
 				this.sessions = data.result;

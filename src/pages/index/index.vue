@@ -23,12 +23,15 @@
 
 <style>
 	.page {
-		position: relative;
-		width: 1680px;
+/* 		position: relative; */
+		width: 100%;
 	}
 	.main-area{
 		width: 1326px;
-		margin: 10px 74px;
+/* 		margin: 10px 74px; */
+		position: absolute;
+		top:74px;
+		left: 74px;
 		display: flex;
 		justify-content: space-between;
 	}
