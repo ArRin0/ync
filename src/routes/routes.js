@@ -57,10 +57,6 @@ const routes = [{
 		component: () => import('@/pages/settings/dialog/pcdialog'),
 	},
 	{
-		path: '/test',
-		component: () => import('@/components/TransferOrder.vue'),
-	},
-	{
 		path: '/createWorkOrder',
 		component: () => import('@/components/CreateWorkOrder.vue'),
 	},
@@ -79,6 +75,11 @@ const routes = [{
 	{
 		path: '/workload2',
 		component: () => import('@/components/workload.vue'),
+	},
+	{
+		path: '/test',
+		component: () => import('@/components/drop.vue'),
+
 	},
 ]
 
