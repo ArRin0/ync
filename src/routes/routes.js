@@ -64,6 +64,10 @@ const routes = [{
 		path: '/createWorkOrder',
 		component: () => import('@/components/CreateWorkOrder.vue'),
 	},
+	{
+		path: '/createBlack',
+		component: () => import('@/components/black.vue'),
+	},
 ]
 
 export default routes;
