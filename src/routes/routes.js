@@ -76,6 +76,10 @@ const routes = [{
 		path: '/addCustomer',
 		component: () => import('@/components/AddCustomer.vue'),
 	},
+	{
+		path: '/workload2',
+		component: () => import('@/components/workload.vue'),
+	},
 ]
 
 export default routes;
