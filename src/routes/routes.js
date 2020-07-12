@@ -58,7 +58,7 @@ const routes = [{
 	},
 	{
 		path: '/test',
-		component: () => import('@/pages/static/components/column'),
+		component: () => import('@/components/Transfer.vue'),
 	},
 ]
 
