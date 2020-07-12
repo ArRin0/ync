@@ -4,11 +4,11 @@
 		<el-dialog title="新建客户信息" :visible.sync="dialogFormVisible" class="abow_dialog">
 		  <el-form :model="form">
 			  <el-form-item label="客户名称" :label-width="formLabelWidth">
-				<el-input v-model="form.username" autocomplete="off" placeholder="请输入"></el-input>
+				<el-input v-model="form.nickName" autocomplete="off" placeholder="请输入"></el-input>
 			  </el-form-item>
 			  
 			  <el-form-item label="真实姓名" :label-width="formLabelWidth">
-				<el-input v-model="form.realname" autocomplete="off" placeholder="请输入"></el-input>
+				<el-input v-model="form.realName" autocomplete="off" placeholder="请输入"></el-input>
 			  </el-form-item>
 			  
 			  
@@ -20,7 +20,7 @@
 				<el-input v-model="form.email" autocomplete="off" placeholder="请输入"></el-input>
 			  </el-form-item>
 			  <el-form-item label="客户公司" :label-width="formLabelWidth">
-				<el-input v-model="form.corporation" autocomplete="off" placeholder="请输入"></el-input>
+				<el-input v-model="form.company" autocomplete="off" placeholder="请输入"></el-input>
 			  </el-form-item>
 			 
 			  <el-form-item label="客户地址" :label-width="formLabelWidth">
@@ -36,25 +36,25 @@
 			  </el-form-item>
 			  
 			  <el-form-item label="客户来源" :label-width="formLabelWidth">
-			    <el-select v-model="form.source" placeholder="请选择">
+			    <el-select v-model="form.channel" placeholder="请选择">
 			  	<el-option label="客服录入" value="1"></el-option>
 			  	<el-option label="网页介入" value="2"></el-option>
 			    </el-select>
 			  </el-form-item>
 			
 			<el-form-item label="选择标签" :label-width="formLabelWidth">
-			  <el-radio v-model="form.radio" label="1">潜在客户</el-radio>
-			  <el-radio v-model="form.radio" label="2">上市公司</el-radio>
+			  <el-radio v-model="form.tags" label="1">潜在客户</el-radio>
+			  <el-radio v-model="form.tags" label="2">上市公司</el-radio>
 			</el-form-item>
 		
 			<el-form-item label="客户备注" :label-width="formLabelWidth">
-			  <el-input type="textarea" v-model="form.description" autocomplete="off"  placeholder="请输入"></el-input>
+			  <el-input type="textarea" v-model="form.remark" autocomplete="off"  placeholder="请输入"></el-input>
 			</el-form-item>
 			
 		</el-form>
 		  <div slot="footer" class="dialog-footer">
 		    <el-button @click="dialogFormVisible = false">取 消</el-button>
-		    <el-button type="primary" @click="dialogFormVisible = false">保 存</el-button>
+		    <el-button type="primary" @click="doSubmit">保 存</el-button>
 			</div>
 		</el-dialog>
 	</div>
@@ -67,19 +67,42 @@
 	      return {
 	        dialogFormVisible: false,
 	        form: {
-			  username:'',
-			  realname: '',
-			  email: '',
-	          phone: '',
-			  level:'',
-			  source:'',
-			  radio: '-1',
-			  corporation:'',
-			  address:'',
+				remark:'',
+				customerServiceId:'',
+				nickName:'',
+				realName: '',
+				email: '',
+				phone: '',
+				level:'',
+				channel:'',
+				tags: '-1',
+				company:'',
+				address:'',
 	        },
 	        formLabelWidth: '120px'
 	      };
-	    }
+	    },
+		created:function(){
+				let suser = localStorage.getItem("user");
+				this.form.customerServiceId=JSON.parse(suser).customerServiceId;
+		},
+		methods:{
+			doSubmit:function(data){
+				console.log(this.form);
+				this.$axios
+					.post("cInfo/create", this.form) //请求接口
+					.then(resp => { //当服务器返回结果后处理
+						let {
+							data
+						} = resp;
+						if(data.success){
+						}
+					})
+					.catch(err => { //当请求失败，处理
+						console.log(err)
+					})
+			}
+		}
 	  };
 </script>
 

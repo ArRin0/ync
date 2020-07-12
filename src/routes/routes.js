@@ -72,6 +72,10 @@ const routes = [{
 		path: '/endSession',
 		component: () => import('@/components/EndSession.vue'),
 	},
+	{
+		path: '/addCustomer',
+		component: () => import('@/components/AddCustomer.vue'),
+	},
 ]
 
 export default routes;
