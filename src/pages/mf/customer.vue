@@ -1,7 +1,7 @@
 <template>
 	<div class="page">
 		<NavBar></NavBar>
-		<g-header></g-header>
+		<g-header name = "访客"></g-header>
 		<div class="myf">
 			    <div class="layui-inline">
 				    <div class="layui-input-inline"  >

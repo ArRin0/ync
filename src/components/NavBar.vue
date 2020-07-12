@@ -32,6 +32,7 @@
 	/* 菜单 */
 	.nav{
 		position: fixed;
+		z-index: 999;
 		left: 0;
 		top: 0;
 		width: 64px;
