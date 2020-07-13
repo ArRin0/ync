@@ -109,6 +109,14 @@ const routes = [{
 		component: () => import('@/pages/settings/team/custserv.vue'),
 	},
 	{
+		path: '/settingofgroup',
+		component: () => import('@/pages/settings/team/group.vue'),
+	},
+	{
+		path: '/settingofrole',
+		component: () => import('@/pages/settings/team/role.vue'),
+	},
+	{
 		path: '/notification',
 		component: () => import('@/pages/settings/global/operatelog.vue'),
 	},
