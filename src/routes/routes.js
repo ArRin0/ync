@@ -80,6 +80,10 @@ const routes = [{
 		path: '/checkingIn',
 		component: () => import('@/components/checkingIn.vue'),
 	},
+	{
+		path: '/visit2',
+		component: () => import('@/components/visit.vue'),
+	},
 ]
 
 export default routes;
