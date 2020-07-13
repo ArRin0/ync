@@ -26,7 +26,7 @@ const routes = [{
 	},
 	{
 		path: '/visitor',
-		component: () => import('@/pages/index/visitor/index.vue'),
+		component: () => import('@/pages/visitor/'),
 	},
 	{
 		path: '/visit',
@@ -93,12 +93,32 @@ const routes = [{
 		component: () => import('@/components/workQuality.vue'),
 	},
 	{
-		path: '/personal',
+		path: '/settingofpersonal',
 		component: () => import('@/pages/settings/common/personal.vue'),
 	},
 	{
-		path: '/company',
+		path: '/settingofcompany',
 		component: () => import('@/pages/settings/team/company.vue'),
+	},
+	{
+		path: '/settingofnotice',
+		component: () => import('@/pages/settings/common/notice.vue'),
+	},
+	{
+		path: '/settingofcustserv',
+		component: () => import('@/pages/settings/team/custserv.vue'),
+	},
+	{
+		path: '/settingofgroup',
+		component: () => import('@/pages/settings/team/group.vue'),
+	},
+	{
+		path: '/settingofrole',
+		component: () => import('@/pages/settings/team/role.vue'),
+	},
+	{
+		path: '/notification',
+		component: () => import('@/pages/settings/custserv/customerinfor.vue'),
 	},
 ]
 

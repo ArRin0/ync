@@ -142,7 +142,7 @@
 		top: 74px;
 		left: 74px;
 		width: 240px;
-		height: 700px;
+		height: 650px;
 		background-color: #FFFFFF;
 		font-size: 14px;
 		font-weight: 400;
