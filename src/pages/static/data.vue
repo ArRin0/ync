@@ -150,10 +150,6 @@
 		position: relative;
 		width: 1680px;
 	}
-	.main-area{
-		width: 1326px;
-		margin: 10px 74px;
-	}
 	.container{
 		width: 1040px;
 		height: 1869px;

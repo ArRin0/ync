@@ -22,6 +22,9 @@
 				<div class="col"><piech :id="'bar3'" :data="objectData3"></piech></div>
 				<div class="col"><piech :id="'bar4'" :data="objectData4"></piech></div>
 			</div>
+			
+			<div><quality></quality></div>
+			
 		</div>
 	</div>
 </template>
@@ -34,6 +37,7 @@
 	import charts from './components/column.vue'
 	import piech from './components/piechart.vue'
 	import drop from '@/components/drop.vue'
+	import quality from '@/components/workQuality.vue' 
 	
 	export default {
 		name: "workmanship",
@@ -44,7 +48,8 @@
 			block,
 			charts,
 			piech,
-			drop
+			drop,
+			quality
 		},
 		data() {
 		  return {
