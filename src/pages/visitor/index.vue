@@ -1,95 +1,95 @@
 <template>
 	<div class="session-main-body">
-		<div class="title"><h3>七尾~在线客服</h3></div>
-		<div class="session-window">
-			<div class="session-msg sender">
-				<div class="user-img">
-					<i class="iconfont icon-beizit"></i>
-				</div>
-				<div class="msg-detail">
-					<div class="msg-title">
-						<span class="user-name">客服1号</span>
-						<span class="msg-time">2020/06/09 20:09</span>
+			<div class="title"><h3>七尾~在线客服</h3></div>
+			<div class="session-window">
+				<div class="session-msg sender">
+					<div class="user-img">
+						<i class="iconfont icon-beizit"></i>
 					</div>
-					<div class="msg-content">您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？</div>
+					<div class="msg-detail">
+						<div class="msg-title">
+							<span class="user-name">客服1号</span>
+							<span class="msg-time">2020/06/09 20:09</span>
+						</div>
+						<div class="msg-content">您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？</div>
+					</div>
+				</div>
+				<div class="session-msg receiver">
+					<div class="user-img">
+						<i class="iconfont icon-beizit"></i>
+					</div>
+					<div class="msg-detail">
+						<div class="msg-title">
+							<span class="user-name">北京客户</span>
+							<span class="msg-time">2020/06/09 20:09</span>
+						</div>
+						<div class="msg-content">您好，我想咨询下。。。？</div>
+					</div>
+				</div>
+				<div class="session-msg receiver">
+					<div class="user-img">
+						<i class="iconfont icon-beizit"></i>
+					</div>
+					<div class="msg-detail">
+						<div class="msg-title">
+							<span class="user-name">北京客户</span>
+							<span class="msg-time">2020/06/09 20:09</span>
+						</div>
+						<div class="msg-content">您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？</div>
+					</div>
+				</div>
+				<div class="session-msg receiver">
+					<div class="user-img">
+						<i class="iconfont icon-beizit"></i>
+					</div>
+					<div class="msg-detail">
+						<div class="msg-title">
+							<span class="user-name">北京客户</span>
+							<span class="msg-time">2020/06/09 20:09</span>
+						</div>
+						<div class="msg-content">您好，我想咨询下。。。？</div>
+					</div>
+				</div>
+				<div class="session-msg receiver">
+					<div class="user-img">
+						<i class="iconfont icon-beizit"></i>
+					</div>
+					<div class="msg-detail">
+						<div class="msg-title">
+							<span class="user-name">北京客户</span>
+							<span class="msg-time">2020/06/09 20:09</span>
+						</div>
+						<div class="msg-content">您好，我想咨询下。。。？</div>
+					</div>
+				</div>
+				<div class="session-msg receiver">
+					<div class="user-img">
+						<i class="iconfont icon-beizit"></i>
+					</div>
+					<div class="msg-detail">
+						<div class="msg-title">
+							<span class="user-name">北京客户</span>
+							<span class="msg-time">2020/06/09 20:09</span>
+						</div>
+						<div class="msg-content">您好，我想咨询下。。。？</div>
+					</div>
 				</div>
 			</div>
-			<div class="session-msg receiver">
-				<div class="user-img">
-					<i class="iconfont icon-beizit"></i>
+			<div class="session-input">
+				<div class="icon-img">
+					<span class="icon"><i class="iconfont icon-xiaolian1"></i></span>
+					<span class="file"><i class="iconfont icon-tupian"></i></span>
 				</div>
-				<div class="msg-detail">
-					<div class="msg-title">
-						<span class="user-name">北京客户</span>
-						<span class="msg-time">2020/06/09 20:09</span>
-					</div>
-					<div class="msg-content">您好，我想咨询下。。。？</div>
+				<div class="input-box">
+					<textarea id="msg" placeholder="请输入内容">
+		
+					</textarea>
 				</div>
-			</div>
-			<div class="session-msg receiver">
-				<div class="user-img">
-					<i class="iconfont icon-beizit"></i>
-				</div>
-				<div class="msg-detail">
-					<div class="msg-title">
-						<span class="user-name">北京客户</span>
-						<span class="msg-time">2020/06/09 20:09</span>
-					</div>
-					<div class="msg-content">您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？</div>
-				</div>
-			</div>
-			<div class="session-msg receiver">
-				<div class="user-img">
-					<i class="iconfont icon-beizit"></i>
-				</div>
-				<div class="msg-detail">
-					<div class="msg-title">
-						<span class="user-name">北京客户</span>
-						<span class="msg-time">2020/06/09 20:09</span>
-					</div>
-					<div class="msg-content">您好，我想咨询下。。。？</div>
-				</div>
-			</div>
-			<div class="session-msg receiver">
-				<div class="user-img">
-					<i class="iconfont icon-beizit"></i>
-				</div>
-				<div class="msg-detail">
-					<div class="msg-title">
-						<span class="user-name">北京客户</span>
-						<span class="msg-time">2020/06/09 20:09</span>
-					</div>
-					<div class="msg-content">您好，我想咨询下。。。？</div>
-				</div>
-			</div>
-			<div class="session-msg receiver">
-				<div class="user-img">
-					<i class="iconfont icon-beizit"></i>
-				</div>
-				<div class="msg-detail">
-					<div class="msg-title">
-						<span class="user-name">北京客户</span>
-						<span class="msg-time">2020/06/09 20:09</span>
-					</div>
-					<div class="msg-content">您好，我想咨询下。。。？</div>
+				<div class="input-btn">
+					<button type="button">发送</button>
 				</div>
 			</div>
 		</div>
-		<div class="session-input">
-			<div class="icon-img">
-				<span class="icon"><i class="iconfont icon-xiaolian1"></i></span>
-				<span class="file"><i class="iconfont icon-tupian"></i></span>
-			</div>
-			<div class="input-box">
-				<textarea id="msg" placeholder="请输入内容">
-	
-				</textarea>
-			</div>
-			<div class="input-btn">
-				<button type="button">发送</button>
-			</div>
-		</div>
-	</div>
 </template>
 
 <script>
@@ -158,14 +158,11 @@
 					 let {data} = resp;
 					 this.userId = data.success?data.message:"";
 					 this.initWebsocket();
-					 console.log(resp);
 				 })
 				 .catch(err=>{
 					 console.log(err)
-				 })
-				 
+				 })	 
 			}
-			
 		},
 		created() {
 			this.getId();

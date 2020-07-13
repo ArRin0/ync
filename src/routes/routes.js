@@ -26,7 +26,7 @@ const routes = [{
 	},
 	{
 		path: '/visitor',
-		component: () => import('@/pages/index/visitor/index.vue'),
+		component: () => import('@/pages/visitor/'),
 	},
 	{
 		path: '/visit',
