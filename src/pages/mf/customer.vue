@@ -1,7 +1,7 @@
 <template>
 	<div class="page">
 		<NavBar></NavBar>
-		<g-header name = "访客"></g-header>
+		<g-header name = "客户信息"></g-header>
 		<div class="myf">
 			    <div class="layui-inline">
 				    <div class="layui-input-inline"  >
@@ -46,7 +46,13 @@
 					</el-input>
 				</div>
 				<div class="myinput">
-					<el-button type="primary" round @click="selectModel5($event)">搜索</el-button>
+					<el-button type="primary" @click="selectModel5($event)">搜索</el-button>
+				</div>
+				<div class="myinput">
+					<AddCustomer></AddCustomer>
+				</div>
+				<div class="myinput">
+					<el-button type="primary" @click="deleted()">批量删除</el-button>
 				</div>
 			<div class="boxShadow">
 			    <el-table
@@ -69,9 +75,11 @@
 					  >
 			        </el-table-column>
 			      </template>
-			      <el-table-column label="操作" width="80" align="center">
+			      <el-table-column label="操作" width=auto align="center">
 			        <template slot-scope="scope">
-			          <el-button size="mini" class="del-com" ><i class="iconfont icon-shanchu"></i></el-button>
+			          <el-button type="text" @click=event1(scope.row.nickName)>详情</el-button>
+					  <CreateWorkOrder class="creat"></CreateWorkOrder>
+					  <el-button type="text" @click=event3(scope.row.nickName)>删除</el-button>
 			        </template>
 			      </el-table-column>
 			    </el-table>
@@ -97,13 +105,17 @@
 <script>
 	import NavBar from '@/components/NavBar.vue'
 	import GHeader from '@/components/Header.vue'
+	import AddCustomer from '@/components/AddCustomer.vue'
+	import CreateWorkOrder from '@/components/CreateWorkOrder.vue'
 	
 	
   export default {
 	  name:"visitFrom",
 	  components: {
 	  	NavBar,
-	  	GHeader
+	  	GHeader,
+		AddCustomer,
+		CreateWorkOrder
 	  },
     data () {
       return {
@@ -247,6 +259,13 @@
 			this.currentPage = currentPage;
 			/*console.log(this.currentPage) */
 		},
+		event1:function(nickName){
+			console.log(nickName);
+		},
+		event3:function(nickName){
+			this.$axios
+			.post(`cInfo/delete?nickName=${nick_name}`)
+		}
 	}
   }
 </script>
@@ -294,6 +313,9 @@
 	.myinput{
 		display: inline-block;
 		margin-left: 20px;
+	}
+	.creat{
+		display: inline-block;
 	}
 </style>
  
