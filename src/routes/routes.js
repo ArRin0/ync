@@ -25,6 +25,10 @@ const routes = [{
 		component: () => import('@/pages/homepage/home'),
 	},
 	{
+		path: '/visitor',
+		component: () => import('@/pages/index/visitor/index.vue'),
+	},
+	{
 		path: '/visit',
 		component: () => import('@/pages/mf/visittable'),
 	},
