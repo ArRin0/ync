@@ -120,6 +120,10 @@ const routes = [{
 		path: '/notification',
 		component: () => import('@/pages/settings/custserv/distributionrule.vue'),
 	},
+	{
+		path: '/allWorkOrder',
+		component: () => import('@/components/allWorkOrder.vue'),
+	},
 ]
 
 export default routes;
