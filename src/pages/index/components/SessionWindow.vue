@@ -308,9 +308,12 @@
 	}
 	.session-main-body .session-window{
 		background-color: rgba(242, 242, 242, 0.498);
-		height: 500px;
+		height: 420px;
 		padding: 50px 20px;
-		overflow:auto;
+		overflow-y:auto;
+	}
+	.session-main-body .session-window::-webkit-scrollbar{
+		display: none;
 	}
 	.session-main-body .session-input{
 		height: 147px;
@@ -371,12 +374,15 @@
 		margin-right: 23px;
 	}
 	.session-input .input-box{
-		height: 40px;
+		height: 100px;
 	}
 	.input-box textarea{
 		height: 100%;
 		width: 100%;
 		border-style:none ;
+	}
+	.input-box textarea:focus{
+		outline: none;
 	}
 	.input-btn{
 		text-align: right;
@@ -388,6 +394,7 @@
 		width: 100px;
 		height: 40px;
 		border-radius: 4px;
+		margin-top: 10px;
 	}
 	
 	/* 选项卡 */

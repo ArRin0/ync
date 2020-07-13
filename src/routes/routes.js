@@ -78,7 +78,7 @@ const routes = [{
 	},
 	{
 		path: '/test',
-		component: () => import('@/pages/index/current-session/index.vue'),
+		component: () => import('@/pages/CustomerDetails/CustomerDetails.vue'),
 	},
 	{
 		path: '/checkingIn',
@@ -94,11 +94,11 @@ const routes = [{
 	},
 	{
 		path: '/personal',
-		component: () => import('@/pages/settings/personal.vue'),
+		component: () => import('@/pages/settings/common/personal.vue'),
 	},
 	{
 		path: '/company',
-		component: () => import('@/pages/settings/company.vue'),
+		component: () => import('@/pages/settings/team/company.vue'),
 	},
 ]
 

@@ -63,8 +63,7 @@
 				
 				  <div class="save"><el-button  @click="doSubmit;">保存</el-button></div>
 				
-			   </el-container>
-			</div>
+			</el-container>
 		</div>
 	</div>
 </template>

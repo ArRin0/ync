@@ -11,7 +11,7 @@
 
 <script>
 	export default{
-		name:'LeftListOfWorkOrder',
+		name:'LeftListOfData',
 		data:function(){
 			return {
 				activeClass: -1,// 0为默认选择第一个，-1为不选择

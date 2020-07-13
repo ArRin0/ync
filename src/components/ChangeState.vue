@@ -33,7 +33,7 @@
 
 <script>
 	 export default {
-		name:"CreateWorkOrder",
+		name:"ChangeState",
 		data() {
 	      return {
 	        dialogFormVisible: false,

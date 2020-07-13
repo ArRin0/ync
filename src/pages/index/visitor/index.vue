@@ -1,5 +1,6 @@
 <template>
 	<div class="session-main-body">
+		<div class="title"><h3>七尾~在线客服</h3></div>
 		<div class="session-window">
 			<div class="session-msg sender">
 				<div class="user-img">
@@ -35,6 +36,18 @@
 						<span class="msg-time">2020/06/09 20:09</span>
 					</div>
 					<div class="msg-content">您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？</div>
+				</div>
+			</div>
+			<div class="session-msg receiver">
+				<div class="user-img">
+					<i class="iconfont icon-beizit"></i>
+				</div>
+				<div class="msg-detail">
+					<div class="msg-title">
+						<span class="user-name">北京客户</span>
+						<span class="msg-time">2020/06/09 20:09</span>
+					</div>
+					<div class="msg-content">您好，我想咨询下。。。？</div>
 				</div>
 			</div>
 			<div class="session-msg receiver">
@@ -127,25 +140,25 @@
 			getId:function(){
 				// 将客户端信息：IP,客户名称，浏览器，屏幕尺寸，设备等信息提交给服务器，服务器返回当前的访客 id
 				 let ip = localStorage.getItem("ip");
-				 let name = localStorage.getItem("cname");
+				 let visitor_name = localStorage.getItem("cname");
 				 
 				 let uaParser = new UaParser();
 				 let uaInfo = uaParser.getResult();
 				 let browser = uaInfo.browser.name;
 				 let screenSize = `${window.screen.width}px,${window.screen.height}px`;
-				 
 				 let params = {
 					 ip,
-					 name,
+					 visitor_name,
 					 browser,
 					 screenSize
 				 }
 				 this.$axios
-				 .post('/visitor/save',params)
+				 .post('/visitor/save',params)//将封装好的参数提交至后端
 				 .then(resp=>{
 					 let {data} = resp;
 					 this.userId = data.success?data.message:"";
 					 this.initWebsocket();
+					 console.log(resp);
 				 })
 				 .catch(err=>{
 					 console.log(err)
@@ -162,15 +175,27 @@
 
 <style>
 	.session-main-body {
+		margin: auto;
+		padding-top: 1px;
+		padding-bottom: 76px;
 		width: 700px;
 		border-right: 2px solid rgba(242, 242, 242, 0.498);
+		background-color: white;
+	}
+	
+	.title{
+		text-align: center;
+		margin: 20px;
 	}
 	
 	.session-main-body .session-window {
-		background-color: rgba(242, 242, 242, 0.498);
-		height: 500px;
+		background-color: rgba(242, 242, 242, 0.6);
+		height: 460px;
 		padding: 50px 20px;
-		overflow: auto;
+		overflow-x: scroll;
+	}
+	.session-main-body .session-window::-webkit-scrollbar{
+		display: none;
 	}
 	
 	.session-main-body .session-input {
@@ -207,7 +232,7 @@
 	}
 	
 	.session-msg .msg-title {
-		color: #ccc;
+		color: #aeaeae;
 		margin-bottom: 6px;
 	}
 	
@@ -224,7 +249,7 @@
 	}
 	
 	.session-input {
-		padding: 10px 20px;
+		padding-left: 10px;
 	}
 	
 	.session-input .icon-img {
@@ -243,13 +268,16 @@
 	}
 	
 	.session-input .input-box {
-		height: 40px;
+		height: 120px;
 	}
 	
 	.input-box textarea {
 		height: 100%;
 		width: 100%;
 		border-style: none;
+	}
+	.input-box textarea:focus{
+		outline: none;
 	}
 	
 	.input-btn {
@@ -260,6 +288,8 @@
 		background-color: #006EFF;
 		color: #fff;
 		border-style: none;
+		margin-right: 16px;
+		margin-top: 6px;
 		width: 100px;
 		height: 40px;
 		border-radius: 4px;
