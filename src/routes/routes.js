@@ -118,7 +118,7 @@ const routes = [{
 	},
 	{
 		path: '/notification',
-		component: () => import('@/pages/settings/custserv/distributionrule.vue'),
+		component: () => import('@/pages/settings/custserv/dialogrule.vue'),
 	},
 ]
 
