@@ -97,8 +97,8 @@ const routes = [{
 		component: () => import('@/pages/settings/common/personal.vue'),
 	},
 	{
-		path: '/company',
-		component: () => import('@/pages/settings/team/company.vue'),
+		path: '/notification',
+		component: () => import('@/pages/settings/global/notification.vue'),
 	},
 ]
 
