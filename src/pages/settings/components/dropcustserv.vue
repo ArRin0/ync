@@ -19,8 +19,8 @@
 			 </div>
 		</div>
 
-		<div class="btn" tyle="width: 100px;"><el-button type="primary" style="width: 100px;">添加公告</el-button></div>
-		<div class="btn" style="width: 100px;"><el-button style="width: 100px;">批量删除</el-button></div>
+		<div class="btn" tyle="width: 100px;"><el-button type="primary" style="width: 100px;">添加客服</el-button></div>
+		<div class="btn" style="width: 100px;"><el-button style="width: 100px;">批量操作</el-button></div>
 		<div class="btn" style="width: 120px;"><el-button style="width: 120px;">导出当前数据</el-button></div>
 
 		</div>

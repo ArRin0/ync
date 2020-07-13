@@ -58,10 +58,10 @@
 				@size-change="handleSizeChange"
 				@current-change="handleCurrentChange"
 				:current-page="currentPage4"
-				:page-sizes="[100, 200, 300, 400]"
-				:page-size="100"
+				:page-sizes="[10, 20, 30, 40, 50, 60,70,80,90,100]"
+				:page-size="10"
 				layout="total, prev, pager, next,sizes, jumper"
-				:total="400"
+				:total="100"
 			  ></el-pagination>
 			</div>
 			
@@ -134,7 +134,7 @@
 	}
 	.bottom {
 	  padding: 20px 20px 0;
-	  padding-left: 450px;
+	  padding-left: 300px;
 	}
 	.delete {
 	  border-top: 1px solid #f2f2f2;

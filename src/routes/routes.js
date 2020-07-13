@@ -26,7 +26,7 @@ const routes = [{
 	},
 	{
 		path: '/visitor',
-		component: () => import('@/pages/index/visitor/index.vue'),
+		component: () => import('@/pages/visitor/'),
 	},
 	{
 		path: '/visit',
@@ -107,6 +107,14 @@ const routes = [{
 	{
 		path: '/settingofcustserv',
 		component: () => import('@/pages/settings/team/custserv.vue'),
+	},
+	{
+		path: '/settingofgroup',
+		component: () => import('@/pages/settings/team/group.vue'),
+	},
+	{
+		path: '/settingofrole',
+		component: () => import('@/pages/settings/team/role.vue'),
 	},
 	{
 		path: '/notification',
