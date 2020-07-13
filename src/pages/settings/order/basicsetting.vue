@@ -43,7 +43,7 @@
 	import drop from '../components/drop.vue'
 	
 	 export default {
-		name:"personal",
+		name:"basicsetting",
 		components: {
 			leftlist,
 			NavBar,

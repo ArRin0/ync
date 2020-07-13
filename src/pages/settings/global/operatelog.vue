@@ -60,7 +60,7 @@
 	import drop from '../components/drop.vue'
 	
 	 export default {
-		name:"personal",
+		name:"operatelog",
 		components: {
 			leftlist,
 			NavBar,

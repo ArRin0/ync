@@ -118,7 +118,7 @@ const routes = [{
 	},
 	{
 		path: '/notification',
-		component: () => import('@/pages/settings/order/classification.vue'),
+		component: () => import('@/pages/settings/custserv/blacklist.vue'),
 	},
 ]
 
