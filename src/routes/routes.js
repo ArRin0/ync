@@ -118,7 +118,7 @@ const routes = [{
 	},
 	{
 		path: '/notification',
-		component: () => import('@/pages/settings/custserv/sessionevaluation.vue'),
+		component: () => import('@/pages/settings/custserv/distributionrule.vue'),
 	},
 ]
 
