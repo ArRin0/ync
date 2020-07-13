@@ -25,7 +25,7 @@
 	        form: {
 				customerServiceId:'',
 				reason: '',
-				customerId:'12',
+				customerId:'10',
 	        },
 	        formLabelWidth: '120px'
 	      };
@@ -49,6 +49,7 @@
 					.catch(err => { //当请求失败，处理
 						console.log(err)
 					})
+				this.dialogFormVisible = false;
 			}
 		}
 	  };

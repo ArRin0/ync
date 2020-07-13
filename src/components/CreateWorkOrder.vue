@@ -73,7 +73,7 @@
 		</el-form>
 		  <div slot="footer" class="dialog-footer">
 		    <el-button @click="dialogFormVisible = false">取 消</el-button>
-		    <el-button type="primary" @click="doSubmit;dialogFormVisible=false">创建工单</el-button>
+		    <el-button type="primary" @click="doSubmit">创建工单</el-button>
 			</div>
 		</el-dialog>
 	</div>
@@ -113,7 +113,10 @@
 					.catch(err => { //当请求失败，处理
 						console.log(err)
 					})
+					this.dialogFormVisible = false;
+					
 			}
+			
 		}
 			
 	  };

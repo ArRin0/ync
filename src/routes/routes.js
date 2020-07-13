@@ -81,6 +81,10 @@ const routes = [{
 		component: () => import('@/components/drop.vue'),
 
 	},
+	{
+		path: '/checkingIn',
+		component: () => import('@/components/checkingIn.vue'),
+	},
 ]
 
 export default routes;

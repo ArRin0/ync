@@ -54,31 +54,32 @@
 	        dataItem: 'nickName',
 	        dataName: '客服昵称'
 	      }, {
-	        dataItem: 'msgCount',
-	        dataName: '消息总量'
+	        dataItem: 'onlineTimeBegin',
+	        dataName: '首次登陆时间'
 	      }, {
-	        dataItem: 'sessionCount',
-	        dataName: '会话总量'
+	        dataItem: 'averageResponseTime',
+	        dataName: '忙碌时长'
 	      }, {
-	        dataItem: 'finishedSession',
-	        dataName: '结束会话数量'
+	        dataItem: 'busyTime',
+	        dataName: '空闲时长'
 	      }, {
-	        dataItem: 'totalTime',
-	        dataName: '会话总时长'
+	        dataItem: 'totalOnlineTime',
+	        dataName: '在线时长'
 	      }, {
 	        dataItem: 'averageSessionTime',
-	        dataName: '单会话平均时长'
+	        dataName: '离线时长'
 	      }],
 	    }
 	  },
 		created:function(){
 				this.$axios
-				.get('/cs/CustomerServiceWorkload')
+				.get('/cs/CustomerServiceCheckingIn')
 				.then(resp=>{
 					let {data} = resp;
 					this.tables = data.result;
 				})
 			}
+		
 	}
 </script>
 
