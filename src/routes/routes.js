@@ -117,6 +117,14 @@ const routes = [{
 		component: () => import('@/pages/settings/team/role.vue'),
 	},
 	{
+		path: '/settingofcommonwords',
+		component: () => import('@/pages/settings/custserv/commonwords.vue'),
+	},
+	{
+		path: '/settingofreply',
+		component: () => import('@/pages/settings/custserv/reply.vue'),
+	},
+	{
 		path: '/notification',
 		component: () => import('@/pages/settings/custserv/dialogrule.vue'),
 	},
