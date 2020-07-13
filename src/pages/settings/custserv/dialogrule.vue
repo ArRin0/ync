@@ -76,7 +76,7 @@
 	import leftlist from '@/components/LeftListOfSetting.vue'
 	import NavBar from '@/components/NavBar.vue'
 	import GHeader from '@/components/Header.vue'
-	import drop from '../components/drop.vue'
+	
 	
 	 export default {
 		name:"dialogrule",
