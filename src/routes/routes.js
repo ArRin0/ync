@@ -110,7 +110,7 @@ const routes = [{
 	},
 	{
 		path: '/notification',
-		component: () => import('@/pages/settings/global/operatelog.vue'),
+		component: () => import('@/pages/settings/order/classification.vue'),
 	},
 ]
 
