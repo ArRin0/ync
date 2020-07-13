@@ -2,14 +2,19 @@
 	<div class="session-box">
 		<div class="session-head">
 			<div class="user-info">
-				<span class="user-name">北京客户:{{sessionId}}</span>
+				<span class="user-name">北京客户 {{sessionId}}</span>
 				<span class="session-index">首次会话</span>
 			</div>
 			<div class="dialog-btns">
-				<span class="dialog-btn"><i class="iconfont icon-add"></i>创建工单</span>
-				<span class="dialog-btn"><i class="iconfont icon-fanhui"></i>转接</span>
+				
+				<CreateWorkOrder></CreateWorkOrder>
+				<Transfer></Transfer>
+				<black></black>
+				<EndSession></EndSession>
+<!-- 				<span class="dialog-btn"><i class="iconfont icon-fanhui"></i>转接</span>
 				<span class="dialog-btn"><i class="iconfont icon-lahei"></i>拉黑</span>
 				<span class="dialog-btn"><i class="iconfont icon-jieshu"></i>结束会话</span>
+		 -->
 			</div>
 		</div>
 		<div class="session-body">
@@ -216,8 +221,13 @@
 </template>
 
 <script>
+	import CreateWorkOrder from '@/components/CreateWorkOrder.vue'
+	import Transfer from '@/components/Transfer.vue'
+	import black from '@/components/black.vue'
+	import EndSession from '@/components/EndSession.vue'
 	export default{
 		name:"SessionWindow",
+		components:{CreateWorkOrder,Transfer,black,EndSession},
 		props:["sessionId"],
 		data:function(){
 			return {
@@ -271,24 +281,23 @@
 		height: 53px;
 		padding: 15px 19px 16px;
 		border-bottom: 2px solid rgba(242, 242, 242, 0.498);
+		box-sizing: border-box;
+		position: relative;
 	}
 	
 	.dialog-btns{
 		flex: 1;
-		text-align: right;
+		/* text-align: right; */
 		color: #006EFF;
-	}
-	.dialog-btns span{
-		margin-right: 34px;
+		display: flex;
 	}
 	.session-index{
-		font-size: 12px;
+		font-size: 14px;
 		opacity: .6;
 	}
-	.dialog-btns span:hover{
-		cursor: pointer;
+	.user-name{
+		font-size: 16px;
 	}
-	
 	.session-body{
 		display: flex;
 		
@@ -474,4 +483,35 @@
 		background:white;
 		background-clip:padding-box;
 	}
+/* 	CreateWorkOrder{
+		width: 60px;
+		float:right;
+	}
+	.box{
+		float:right;
+	}
+	.el-button.el-button--text{
+		height: 20px;
+	} */
+	 .tem1.box{
+		position: absolute;
+		left:630px;
+		bottom: 6px;	
+	}	
+	.tem2.box{
+		position: absolute;
+		left:740px;
+		bottom: 6px;	
+	}	
+	.tem3.box{
+		position: absolute;
+		left:830px;
+		bottom: 6px;	
+	}	
+	.tem4.box{
+		position: absolute;
+		left:920px;
+		bottom: 6px;	
+	}	
+
 </style>

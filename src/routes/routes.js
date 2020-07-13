@@ -74,7 +74,7 @@ const routes = [{
 	},
 	{
 		path: '/test',
-		component: () => import('@/components/drop.vue'),
+		component: () => import('@/pages/index/current-session/index.vue'),
 	},
 ]
 

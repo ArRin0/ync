@@ -1,5 +1,5 @@
 <template>
-	<div class="box">
+	<div class="box tem1">
 		<el-button type="text" @click="dialogFormVisible = true"><span class="dialog-btn"><i class="iconfont icon-weibiaoti1"></i>创建工单</span></el-button>
 		<el-dialog title="新建工单" :visible.sync="dialogFormVisible" class="abow_dialog">
 		 
