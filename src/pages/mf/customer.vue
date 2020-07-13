@@ -62,7 +62,7 @@
 			      style="width: 100% "
 				  header-cell-style="background-color: rgba(0, 110, 255, 0.098)"
 				  >
-				  <el-table-column type="selection" width= "45px" ></el-table-column>
+				  <el-table-column type="selection" width= "45px" selection-change="changeFun"></el-table-column>
 			      <template v-for='(col) in tableData'>
 			        <el-table-column
 			          sortable
@@ -260,11 +260,21 @@
 			/*console.log(this.currentPage) */
 		},
 		event1:function(nickName){
-			console.log(nickName);
+			this.$router.push({
+				path:`/CustomerDetails?nickName=${nickName}`,
+				query:{nickName:nickName}
+			});
 		},
 		event3:function(nickName){
 			this.$axios
 			.post(`cInfo/delete?nickName=${nick_name}`)
+		},
+		deleted:function(){
+			console.log(this.rangeDate);
+		},
+		changeFun:function(val){
+			this.rangeDate = val;
+			console.log(this.rangeDate);
 		}
 	}
   }

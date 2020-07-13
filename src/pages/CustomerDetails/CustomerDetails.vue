@@ -72,15 +72,15 @@
 						</el-dialog>
 					</div>
 				</dt>
-				<dd><span class="label">客户名称</span><span class="item">北京市客户</span></dd>
-				<dd><span class="label">真实姓名</span><span class="item">王伟</span></dd>
-				<dd><span class="label">客户电话</span><span class="item">—</span></dd>
-				<dd><span class="label">客户邮箱</span><span class="item">—</span></dd>
-				<dd><span class="label">客户公司</span><span class="item">—</span></dd>
-				<dd><span class="label">客户地址</span><span class="item">—</span></dd>
-				<dd><span class="label">客户等级</span><span class="item">普通客户</span></dd>
-				<dd><span class="label">客户来源</span><span class="item">访客转化</span></dd>
-				<dd><span class="label">客户备注</span><span class="item">—</span></dd>
+				<dd><span class="label">客户名称</span><span class="item">{{customer.nickName}}</span></dd>
+				<dd><span class="label">真实姓名</span><span class="item">{{customer.realName}}</span></dd>
+				<dd><span class="label">客户电话</span><span class="item">{{customer.phone}}</span></dd>
+				<dd><span class="label">客户邮箱</span><span class="item">{{customer.email}}</span></dd>
+				<dd><span class="label">客户公司</span><span class="item">{{customer.company}}</span></dd>
+				<dd><span class="label">客户地址</span><span class="item">{{customer.address}}</span></dd>
+				<dd><span class="label">客户等级</span><span class="item">{{customer.level}}</span></dd>
+				<dd><span class="label">客户来源</span><span class="item">{{customer.channel}}</span></dd>
+				<dd><span class="label">客户备注</span><span class="item">{{customer.remark}}</span></dd>
 				<dd><span class="label">客户标签</span><span class="item"><span>已上市</span><span>潜在客户</span></span></dd>
 			</dl>
 		</div>
@@ -121,6 +121,40 @@
 				</dl>
 			</div>
 			
+			    <el-table
+			      :data="tables.slice((currentPage-1)*pagesize,currentPage*pagesize)"
+			      ref="multipleTable"
+			      tooltip-effect="dark"
+			      style="width: 100% "
+				  header-cell-style="background-color: rgba(0, 110, 255, 0.098)"
+				  >
+			      <template v-for='(col) in tableData'>
+			        <el-table-column
+			          sortable
+			          :show-overflow-tooltip="true"
+			          :prop="col.dataItem"
+			          :label="col.dataName"
+			          :key="col.dataItem"
+			          width=auto
+					  align="center"
+					  >
+			        </el-table-column>
+			      </template>
+			    </el-table>
+				<div class="pagination">
+					<el-pagination 
+						@size-change="handleSizeChange" 
+						@current-change="handleCurrentChange" 
+						:current-page="currentPage" 
+						:page-sizes="[5, 10, 20, 40]" 
+						:page-size="pagesize" 
+						layout="total, sizes,prev, pager, next" 
+						:total="tables.length" 
+						prev-text="上一页" 
+						next-text="下一页">
+					</el-pagination>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -143,6 +177,121 @@
 		  },
 	data:function(){
 		return {
+			nickName:'',
+			customer:{
+				nickName:'',
+				realName:'',
+				phone:'',
+				email:'',
+				company:'',
+				address:'',
+				level:'',
+				channel:'',
+				remark:''
+			},
+			currentPage: 1, //默认显示页面为1
+			pagesize: 5, //    每页的数据条数
+			rangeDate: [] ,
+			tables: [{
+				Time:"2020/7/13 22:20",
+				browser:"微信",
+				customerService:"王美美",
+				group:"未分组",
+				visitDuration:"12分20秒",
+				m:5
+			},
+			{
+				Time:"2020/7/13 22:20",
+				browser:"微信",
+				customerService:"王美美",
+				group:"未分组",
+				visitDuration:"12分20秒",
+				m:5
+			},
+			{
+				Time:"2020/7/13 22:20",
+				browser:"微信",
+				customerService:"王美美",
+				group:"未分组",
+				visitDuration:"12分20秒",
+				m:5
+			},{
+				Time:"2020/7/13 22:20",
+				browser:"微信",
+				customerService:"王美美",
+				group:"未分组",
+				visitDuration:"12分20秒",
+				m:5
+			},{
+				Time:"2020/7/13 22:20",
+				browser:"微信",
+				customerService:"王美美",
+				group:"未分组",
+				visitDuration:"12分20秒",
+				m:5
+			},{
+				Time:"2020/7/13 22:20",
+				browser:"微信",
+				customerService:"王美美",
+				group:"未分组",
+				visitDuration:"12分20秒",
+				m:5
+			},{
+				Time:"2020/7/13 22:20",
+				browser:"微信",
+				customerService:"王美美",
+				group:"未分组",
+				visitDuration:"12分20秒",
+				m:5
+			},{
+				Time:"2020/7/13 22:20",
+				browser:"微信",
+				customerService:"王美美",
+				group:"未分组",
+				visitDuration:"12分20秒",
+				m:5
+			},{
+				Time:"2020/7/13 22:20",
+				browser:"微信",
+				customerService:"王美美",
+				group:"未分组",
+				visitDuration:"12分20秒",
+				m:5
+			},{
+				Time:"2020/7/13 22:20",
+				browser:"微信",
+				customerService:"王美美",
+				group:"未分组",
+				visitDuration:"12分20秒",
+				m:5
+			},{
+				Time:"2020/7/13 22:20",
+				browser:"微信",
+				customerService:"王美美",
+				group:"未分组",
+				visitDuration:"12分20秒",
+				m:5
+			}],
+			myinputs:'',
+			tableData: [{
+			  dataItem: 'Time',
+			  dataName: '访问时间'
+			}, {
+			  dataItem: 'browser',
+			  dataName: '来源'
+			}, {
+			  dataItem: 'customerService',
+			  dataName: '客服'
+			}, {
+			  dataItem: 'group',
+			  dataName: '客服组'
+			}, {
+			  dataItem: 'visitDuration',
+			  dataName: '访问时常'
+			}, {
+			  dataItem: 'm',
+			  dataName: '满意度'
+			}],
 			activeClass: 0,// 0为默认选择第一个，-1为不选择
 			activeName: '1',
 		    radio:'1',
@@ -166,10 +315,21 @@
 			formLabelWidth: '120px',
 		}
 	},
+	created() {
+	    this.nickName=this.$route.query.nickName;
+		this.$axios
+		.get(`cInfo/selectBynickName?nickName=${this.nickName}`)
+		.then(resp=>{
+			let {data} = resp;
+			this.customer = data.result;
+			console.log(this.customer)
+		})
+	},
 	methods: {
 	      IsActive(k) {
 	        this.activeClass = k;
-	      }
+	      },
+		  
 	}
 	
 	}

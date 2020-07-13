@@ -208,7 +208,7 @@
 				.get('/visitor/select')
 				.then(resp=>{
 						let {data} = resp;
-						
+						this.tables = data.result;
 				})
 			}else{
 				this.$axios
