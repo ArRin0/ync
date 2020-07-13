@@ -2,16 +2,16 @@
 	<div class="nav">
 		<div class="logo">Logo</div>
 		<div class="menu">
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-shouye7"></i></router-link><div class="text">首页</div></div>
+			<div class="menu-item"><router-link to="/home"><i class="iconfont icon-shouye7"></i></router-link><div class="text">首页</div></div>
 			<div class="menu-item"><router-link to="/index/current-session"><i class="iconfont icon-gongdanguanli"></i></router-link><div class="text">消息</div></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-icon-test"></i></router-link><div class="text">访客</div></div>
+			<div class="menu-item"><router-link to="/visit"><i class="iconfont icon-icon-test"></i></router-link><div class="text">访客</div></div>
 			<div class="menu-item"><router-link to="/index/history-session"><i class="iconfont icon-lishi"></i></router-link><div class="text">历史</div></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-yonghu"></i></router-link><div class="text">客户</div></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-gongdan"></i></router-link><div class="text">订单</div></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-tongji"></i></router-link><div class="text">统计</div></div>
+			<div class="menu-item"><router-link to="/customer"><i class="iconfont icon-yonghu"></i></router-link><div class="text">客户</div></div>
+			<div class="menu-item"><router-link to="/WorkOrder"><i class="iconfont icon-gongdan"></i></router-link><div class="text">工单</div></div>
+			<div class="menu-item"><router-link to="/data"><i class="iconfont icon-tongji"></i></router-link><div class="text">统计</div></div>
 			<div class="menu-item separate-line"><i class="iconfont icon-hengxian"></i></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-shezhi"></i></router-link><div class="text">设置</div></div>
-			<div class="menu-item"><router-link to=""><i class="iconfont icon-tubiaoshangchuanmoban"></i></router-link><div class="text">退出</div></div>
+			<div class="menu-item"><router-link to="/settingofpersonal"><i class="iconfont icon-shezhi"></i></router-link><div class="text">设置</div></div>
+			<div class="menu-item"><router-link to="/login"><i class="iconfont icon-tubiaoshangchuanmoban"></i></router-link><div class="text">退出</div></div>
 		</div>
 	</div>
 </template>
@@ -37,7 +37,7 @@
 		top: 0;
 		width: 64px;
 		height: 722px;
-		background-color: #000;
+		background-color: #171c3a;
 		border: 1px solid #797979;
 	}
 	.router-link-active{

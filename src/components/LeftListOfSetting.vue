@@ -91,6 +91,12 @@
 				this.activeClass3 = -1;
 				this.activeClass4 = -1;
 				this.activeClass5 = -1;
+				if (k == 0) {
+					this.$router.push('/settingofpersonal');
+				}
+				if (k == 1) {
+					this.$router.push('/settingofnotice');
+				}
 		      },
 			  IsActive2(k) {
 			    this.activeClass1 = -1;
@@ -98,6 +104,18 @@
 			    this.activeClass3 = -1;
 			    this.activeClass4 = -1;
 			    this.activeClass5 = -1;
+				if (k == 0) {
+					this.$router.push('/settingofcompany');
+				}
+				if (k == 1) {
+					this.$router.push('/settingofcustserv');
+				}
+				if (k == 2) {
+					this.$router.push('/settingofgroup');
+				}
+				if (k == 3) {
+					this.$router.push('/settingofrole');
+				}
 			  },
 			  IsActive3(k) {
 			    this.activeClass1 = -1;
@@ -105,6 +123,30 @@
 			    this.activeClass3 = k;
 			    this.activeClass4 = -1;
 			    this.activeClass5 = -1;
+				if (k == 0) {
+					this.$router.push('/settingofcommonwords');
+				}
+				if (k == 1) {
+					this.$router.push('/settingofreply');
+				}
+				if (k == 2) {
+					this.$router.push('/settingofdialogrule');
+				}
+				if (k == 3) {
+					this.$router.push('/settingofdistributionrule');
+				}
+				if (k == 4) {
+					this.$router.push('/settingofsessionevaluation');
+				}
+				if (k == 5) {
+					this.$router.push('/settingofcustomerinfor');
+				}
+				if (k == 6) {
+					this.$router.push('/settingofcustomerlabel');
+				}
+				if (k == 7) {
+					this.$router.push('/settingofblacklist');
+				}
 			  },
 			  IsActive4(k) {
 			    this.activeClass1 = -1;
@@ -112,6 +154,12 @@
 			    this.activeClass3 = -1;
 			    this.activeClass4 = k;
 			    this.activeClass5 = -1;
+				if (k == 0) {
+					this.$router.push('/settingofbasicsetting');
+				}
+				if (k == 1) {
+					this.$router.push('/settingofclassification');
+				}
 			  },
 			  IsActive5(k) {
 			    this.activeClass1 = -1;
@@ -119,6 +167,12 @@
 			    this.activeClass3 = -1;
 			    this.activeClass4 = -1;
 			    this.activeClass5 = k;
+				if (k == 0) {
+					this.$router.push('/settingofoperatelog');
+				}
+				if (k == 1) {
+					this.$router.push('/settingofnotification');
+				}
 			  },
 		}
 	}

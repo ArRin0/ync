@@ -152,7 +152,7 @@
 	}
 	.container{
 		width: 1040px;
-		height: 1869px;
+		height: 1400px;
 		background-color: #FFFFFF;
 		border-radius: 4px;
 		position: absolute;

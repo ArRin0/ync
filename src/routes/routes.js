@@ -97,12 +97,12 @@ const routes = [{
 		component: () => import('@/pages/settings/common/personal.vue'),
 	},
 	{
-		path: '/settingofcompany',
-		component: () => import('@/pages/settings/team/company.vue'),
-	},
-	{
 		path: '/settingofnotice',
 		component: () => import('@/pages/settings/common/notice.vue'),
+	},
+	{
+		path: '/settingofcompany',
+		component: () => import('@/pages/settings/team/company.vue'),
 	},
 	{
 		path: '/settingofcustserv',
@@ -125,8 +125,44 @@ const routes = [{
 		component: () => import('@/pages/settings/custserv/reply.vue'),
 	},
 	{
-		path: '/notification',
+		path: '/settingofdialogrule',
 		component: () => import('@/pages/settings/custserv/dialogrule.vue'),
+	},
+	{
+		path: '/settingofblacklist',
+		component: () => import('@/pages/settings/custserv/blacklist.vue'),
+	},
+	{
+		path: '/settingofcustomerinfor',
+		component: () => import('@/pages/settings/custserv/customerinfor.vue'),
+	},
+	{
+		path: '/settingofcustomerlabel',
+		component: () => import('@/pages/settings/custserv/customerlabel.vue'),
+	},
+	{
+		path: '/settingofdistributionrule',
+		component: () => import('@/pages/settings/custserv/distributionrule.vue'),
+	},
+	{
+		path: '/settingofsessionevaluation',
+		component: () => import('@/pages/settings/custserv/sessionevaluation.vue'),
+	},
+	{
+		path: '/settingofnotification',
+		component: () => import('@/pages/settings/global/notification.vue'),
+	},
+	{
+		path: '/settingofoperatelog',
+		component: () => import('@/pages/settings/global/operatelog.vue'),
+	},
+	{
+		path: '/settingofbasicsetting',
+		component: () => import('@/pages/settings/order/basicsetting.vue'),
+	},
+	{
+		path: '/settingofclassification',
+		component: () => import('@/pages/settings/order/classification.vue'),
 	},
 	{
 		path: '/allWorkOrder',

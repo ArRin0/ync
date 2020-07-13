@@ -28,6 +28,24 @@
 		methods: {
 		      IsActive(k) {
 		        this.activeClass = k;
+				if (k == 0) {
+					this.$router.push('/');
+				}
+				if (k == 1) {
+					this.$router.push('/');
+				}
+				if (k == 2) {
+					this.$router.push('/');
+				}
+				if (k == 3) {
+					this.$router.push('/');
+				}
+				if (k == 4) {
+					this.$router.push('/');
+				}
+				if (k == 5) {
+					this.$router.push('/');
+				}
 		      }
 		}
 	}

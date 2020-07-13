@@ -15,6 +15,9 @@
 			<div>
 				<div class="col"><linechart :id="'bar1'" :data="objectData1"></linechart></div>
 			</div>
+			
+			<div><visit></visit></div>
+			
 		</div>
 	</div>
 </template>
@@ -26,6 +29,7 @@
 	import block from './components/block.vue'
 	import drop from '@/components/drop.vue'
 	import linechart from './components/line.vue'
+	import visit from '@/components/visit.vue'
 	
 	export default {
 		name: "visits",
@@ -35,7 +39,8 @@
 			GHeader,
 			block,
 			drop,
-			linechart
+			linechart,
+			visit
 		},
 		data(){
 			return {

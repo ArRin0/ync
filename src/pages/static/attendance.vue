@@ -5,7 +5,7 @@
 		<leftlist></leftlist>
 		<div class="container">
 			<div class="choice"><drop></drop></div>
-			
+			<div><checkingin></checkingin></div>
 		</div>
 	</div>
 </template>
@@ -15,6 +15,7 @@
 	import NavBar from '@/components/NavBar.vue'
 	import GHeader from '@/components/Header.vue'
 	import drop from '@/components/drop.vue'
+	import checkingin from '@/components/checkingIn.vue'
 	
 	export default {
 		name: "data",
@@ -23,6 +24,7 @@
 			NavBar,
 			GHeader,
 			drop,
+			checkingin
 		}
 	}
 </script>
@@ -32,13 +34,9 @@
 		position: relative;
 		width: 1680px;
 	}
-	.main-area{
-		width: 1326px;
-		margin: 10px 74px;
-	}
 	.container{
 		width: 1040px;
-		height: 1869px;
+		height: 1500px;
 		background-color: #FFFFFF;
 		border-radius: 4px;
 		position: absolute;
