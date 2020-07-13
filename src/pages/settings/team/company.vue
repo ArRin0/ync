@@ -18,11 +18,11 @@
 					</el-form-item>
 					
 					<el-form-item label="企业名称" :label-width="formLabelWidth"  :required="true">
-					  <el-input class="input" v-model="form.compname" autocomplete="off" placeholder="请输入"></el-input>
+					  <el-input class="input" v-model="form.name" autocomplete="off" placeholder="请输入"></el-input>
 					</el-form-item>
 					
 					<el-form-item label="企业账户" :label-width="formLabelWidth">
-					  <el-input class="input" v-model="form.compaccount" autocomplete="off" placeholder="请输入"></el-input>
+					  <el-input class="input" v-model="form.account" autocomplete="off" placeholder="请输入"></el-input>
 					</el-form-item>
 					
 					<el-form-item label="所属行业" :label-width="formLabelWidth">
@@ -34,7 +34,7 @@
 					</el-form-item>
 					
 					<el-form-item label="团队规模" :label-width="formLabelWidth">
-					  <el-select v-model="form.scale" placeholder="请选择">
+					  <el-select v-model="form.teamSize" placeholder="请选择">
 					    <el-option label="10人一下" value="1"></el-option>
 					    <el-option label="10-99人" value="2"></el-option>
 					  	<el-option label="100-499人" value="3"></el-option>
@@ -43,25 +43,25 @@
 					</el-form-item>
 					
 					<el-form-item label="联系人姓名" :label-width="formLabelWidth" >
-					  <el-input class="input" v-model="form.cname" autocomplete="off" placeholder="请输入"></el-input>
+					  <el-input class="input" v-model="form.contactName" autocomplete="off" placeholder="请输入"></el-input>
 					</el-form-item>
 					
 					<el-form-item label="联系人电话" :label-width="formLabelWidth">
-					  <el-input class="input" v-model="form.cnumber" autocomplete="off" placeholder="请输入"></el-input>
+					  <el-input class="input" v-model="form.contactPhone" autocomplete="off" placeholder="请输入"></el-input>
 					</el-form-item>
 					
 					<el-form-item label="公司地址" :label-width="formLabelWidth" >
-					  <el-input class="input" v-model="form.compaddress" autocomplete="off" placeholder="请输入"></el-input>
+					  <el-input class="input" v-model="form.companyAddress" autocomplete="off" placeholder="请输入"></el-input>
 					</el-form-item>
 					
 					<el-form-item label="备注信息" :label-width="formLabelWidth">
-					  <el-input class="input" v-model="form.tip" autocomplete="off" placeholder="请输入"></el-input>
+					  <el-input class="input" v-model="form.remark" autocomplete="off" placeholder="请输入"></el-input>
 					</el-form-item>
 					
 					<el-divider></el-divider>
 				</el-form>
 				
-				  <div class="save"><el-button  @click="doSubmit;">保存</el-button></div>
+				  <div class="save"><el-button  @click="doSubmit">保存</el-button></div>
 				
 			</el-container>
 		</div>
@@ -83,23 +83,34 @@
 		data() {
 	      return {
 			  form: {
-			    cclist:'',
-			    compname:'',
-				compaccount:'',
+			    name:'',
+				account:'',
 				industry:'',
-				cname:'',
-				cnumber:'',
-				compaddress:'',
-				compaddress:'',
-				tip:'',
+				contactName:'',
+				contactPhone:'',
+				teamSize:'',
+				companyAddress:'',
+				remark:'',
 			  },
 	        formLabelWidth: '120px'
 	      };
 	    },
 		methods:{
 			doSubmit:function(data){
-				console.log(this.form);
-			}
+				this.$axios
+					.post("enterpise/update", this.form) //请求接口
+					.then(resp => { //当服务器返回结果后处理
+						let {
+							data
+						} = resp;
+						if(data.success){
+						}
+					})
+					.catch(err => { //当请求失败，处理
+						console.log(err)
+					})
+			},
+			
 		}
 			
 	  };
