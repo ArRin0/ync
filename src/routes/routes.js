@@ -118,7 +118,7 @@ const routes = [{
 	},
 	{
 		path: '/notification',
-		component: () => import('@/pages/settings/custserv/customerlabel.vue'),
+		component: () => import('@/pages/settings/custserv/customerinfor.vue'),
 	},
 ]
 
