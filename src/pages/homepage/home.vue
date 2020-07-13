@@ -1,7 +1,7 @@
 <template>
 	<div class="page">
 		<nav-bar></nav-bar>
-		<g-header></g-header>
+		<g-header name="首页"></g-header>
 		<div class="main-area">
 			<div class="item0"><h2 class="htext">客服七尾，欢迎回来！</h2></div>
 			
@@ -28,7 +28,7 @@
 				</div>
 			</div>
 			
-			<div class="item2"><div class="text">访问量统计</div></div>
+			<div class="item2"><linechart :id="'bar1'" :data="objectData1" style="width: 100%;height: 300px"></linechart></div>
 	
 			<div class="item3">
 				<div class="text">快捷入口</div>
@@ -89,13 +89,47 @@
 	import NavBar from '@/components/NavBar.vue'
 	import GHeader from '@/components/Header.vue'
 	import Table from '@/components/customertable.vue'
+	import linechart from '@/components/line.vue'
 
 	export default {
 		name: "Index",
 		components: {
 			NavBar,
 			GHeader,
-			Table
+			Table,
+			linechart
+		},
+		data(){
+			return{
+				objectData1:{
+					textTile: "访问量统计",
+					nameArray: ['10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00'],
+					series: [
+						{
+							name: '总会话量',
+							symbol: "none",
+							type: 'line',
+							itemStyle:{color:'rgb(46, 212, 119)'},
+							data: [15, 12, 22, 25, 30, 40, 30, 33, 36, 40, 45, 60, 45, 43, 42]
+						},
+						{
+							name: '有效会话量',
+							symbol: "none",
+							type: 'line',
+							itemStyle:{color:'rgb(26, 125, 254)'},
+							data: [30, 17, 22, 15, 23, 47, 55, 47, 54, 40, 43, 40, 35, 40, 37]
+						},
+						{
+							name: '邮件营销',
+							symbol: "none",
+							type: 'line',
+							itemStyle:{color:'rgb(255, 98, 98)'},
+							data: [25, 32, 12, 22, 10, 30, 33, 37, 46, 50, 40, 45, 40, 43, 45]
+						},
+						
+					],
+				},
+			}
 		}
 	}
 </script>

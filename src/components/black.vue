@@ -1,5 +1,5 @@
 <template>
-	<div class="box">
+	<div class="box tem3">
 		<el-button type="text" @click="dialogFormVisible = true"><span class="dialog-btn"><i class="iconfont icon-lahei"></i>拉黑</span></el-button>
 		<el-dialog title="拉黑客户" :visible.sync="dialogFormVisible" class="abow_dialog">
         <el-form :model="form">

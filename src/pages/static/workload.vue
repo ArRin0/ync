@@ -1,10 +1,10 @@
 <template>
 	<div class="page">
 		<nav-bar></nav-bar>
-		<g-header></g-header>
+		<g-header name="工作量"></g-header>
 		<leftlist></leftlist>
 		<div class="container">
-			<div class="choice"></div>
+			<div class="choice"><drop></drop></div>
 			<div class="box1">
 				<block type1="总消息数" type2="230" type3="有效消息数200"></block>
 				<block type1="总会话量" type2="30" type3="有效会话数20"></block>
@@ -12,8 +12,14 @@
 				<block type1="总会话时长" type2="60m" type3="最大会话时长5m2s"></block>
 				<block type1="平均会话时长" type2="9m3s" type3="最大会话时长5m2s"></block>
 			</div>
-			<div class="text">统计图</div>
-			<Bar :getData="otherProportion" title="单会话消息数统计" />
+			
+			<div class="box2">
+				<div class="col"><charts :id="'bar1'" :data="objectData1"></charts></div>
+				<div class="col"><charts :id="'bar2'" :data="objectData2"></charts></div>
+			</div>
+			
+			<div><load></load></div>
+			
 		</div>
 	</div>
 </template>
@@ -23,16 +29,54 @@
 	import NavBar from '@/components/NavBar.vue'
 	import GHeader from '@/components/Header.vue'
 	import block from './components/block.vue'
-	import echarts from 'echarts'
+	import charts from './components/column.vue'
+	import drop from '@/components/drop.vue'
+	import load from '@/components/workload.vue'
 	
 	export default {
-		name: "data",
+		name: "workload",
 		components: {
 			leftlist,
 			NavBar,
 			GHeader,
-			block
+			block,
+			charts,
+			drop,
+			load
 		},
+		mounted() {
+			this.$set(this.objectData1.series,2,[7,7,7,7,7,7])
+		},
+		data() {
+		  return {
+		    objectData1:{
+				textTile: "单会话消息数统计",
+				nameArray: ['0-10', '10-20', '20-30', '30-40', '40~'],
+				series: [{
+					name: '消息数',
+					type: 'bar',
+					data: [3, 5, 9, 8, 4, 7],
+					barWidth: '40',
+					itemStyle:{
+						color: 'rgb(50, 182, 252)',
+					}
+				}],
+		    },
+			objectData2:{
+				textTile: "单会话时长统计",
+				nameArray: ['0-10', '10-20', '20-30', '30-40', '40~'],
+				series: [{
+					name: '消息数',
+					type: 'bar',
+					data: [3, 5, 9, 8, 4, 7],
+					barWidth: '40',
+					itemStyle:{
+						color: 'rgb(50, 182, 252)',
+					}
+				}],
+			},
+		  }
+		}
 	}
 </script>
 
@@ -71,5 +115,16 @@
 		top: 22px;
 		font-size: 18px;
 		font-weight: 400;
+	}
+	.box2{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-left: 22pxpx;
+	}
+	.col{
+		width: 475px;
+		height: 400px;
+		margin-top: 50px;
 	}
 </style>

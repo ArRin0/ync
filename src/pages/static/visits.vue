@@ -1,10 +1,10 @@
 <template>
 	<div class="page">
 		<nav-bar></nav-bar>
-		<g-header></g-header>
+		<g-header name="访问统计"></g-header>
 		<leftlist></leftlist>
 		<div class="container">
-			<div class="choice"></div>
+			<div class="choice"><drop></drop></div>
 			<div class="box1">
 				<block type1="浏览量(PV)" type2="2300" type3="平均浏览页面20"></block>
 				<block type1="访客量(UV)" type2="30" type3="跳出率20%"></block>
@@ -12,7 +12,9 @@
 				<block type1="总评价数" type2="67" type3="客户评价率80%"></block>
 				<block type1="好评率" type2="78%" type3="评价率67%"></block>
 			</div>
-			<div class="text">浏览量</div>
+			<div>
+				<div class="col"><linechart :id="'bar1'" :data="objectData1"></linechart></div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -22,14 +24,44 @@
 	import NavBar from '@/components/NavBar.vue'
 	import GHeader from '@/components/Header.vue'
 	import block from './components/block.vue'
+	import drop from '@/components/drop.vue'
+	import linechart from './components/line.vue'
 	
 	export default {
-		name: "data",
+		name: "visits",
 		components: {
 			leftlist,
 			NavBar,
 			GHeader,
-			block
+			block,
+			drop,
+			linechart
+		},
+		data(){
+			return {
+				objectData1:{
+					textTile: "浏览量",
+					nameArray: ['10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00'],
+					series: [
+						{
+							name: '浏览量',
+							symbol: "none",
+							type: 'line',
+							stack: "总量",
+							itemStyle:{color:'rgb(46, 212, 119)'},
+							data: [15, 12, 22, 25, 30, 40, 30, 34, 56, 47, 56, 66, 28, 23, 33]
+						},
+						{
+							name: '访客量',
+							symbol: "none",
+							type: 'line',
+							stack: "总量",
+							itemStyle:{color:'rgb(255, 98, 98)'},
+							data: [30, 17, 22, 15, 23, 47, 55, 47, 54, 40, 43, 40, 35, 40, 37]
+						},
+					],
+				},
+			}
 		}
 	}
 </script>

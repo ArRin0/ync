@@ -73,13 +73,8 @@ const routes = [{
 		component: () => import('@/components/AddCustomer.vue'),
 	},
 	{
-		path: '/workload2',
-		component: () => import('@/components/workload.vue'),
-	},
-	{
 		path: '/test',
-		component: () => import('@/components/drop.vue'),
-
+		component: () => import('@/pages/index/current-session/index.vue'),
 	},
 	{
 		path: '/checkingIn',

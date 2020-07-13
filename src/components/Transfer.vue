@@ -1,5 +1,5 @@
 <template>
-	<div class="box">
+	<div class="box tem2">
 		<el-button type="text" @click="dialogFormVisible = true"><span class="dialog-btn"><i class="iconfont icon-fanhui"></i>转接</span></el-button>
 		<el-dialog title="转接" :visible.sync="dialogFormVisible" class="abow_dialog">
 		 
@@ -36,7 +36,7 @@
 
 <script>
 	 export default {
-		name:"CreateWorkOrder",
+		name:"Transfer",
 		data() {
 	      return {
 	        dialogFormVisible: false,
