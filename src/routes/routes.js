@@ -88,6 +88,14 @@ const routes = [{
 		path: '/workQuality2',
 		component: () => import('@/components/workQuality.vue'),
 	},
+	{
+		path: '/personal',
+		component: () => import('@/pages/settings/personal.vue'),
+	},
+	{
+		path: '/company',
+		component: () => import('@/pages/settings/company.vue'),
+	},
 ]
 
 export default routes;

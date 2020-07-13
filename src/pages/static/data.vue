@@ -22,8 +22,8 @@
 			</div>
 			
 			<div class="box2">
-				<div class="col"><piech :id="'bar2'" :data="objectData2"></piech></div>
-				<div class="col"><piech :id="'bar3'" :data="objectData3"></piech></div>
+				<div class="col2"><piech :id="'bar2'" :data="objectData2"></piech></div>
+				<div class="col2"><piech :id="'bar3'" :data="objectData3"></piech></div>
 			</div>
 			
 		</div>
@@ -190,6 +190,11 @@
 	}
 	.col{
 		width: 1040px;
+		height: 400px;
+		margin-top: 50px;
+	}
+	.col2{
+		width: 435px;
 		height: 400px;
 		margin-top: 50px;
 	}

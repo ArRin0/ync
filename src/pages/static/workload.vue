@@ -45,7 +45,7 @@
 			load
 		},
 		mounted() {
-			this.$set(this.objectData1.series,2,[7,7,7,7,7,7])
+			
 		},
 		data() {
 		  return {
@@ -84,10 +84,6 @@
 	.page {
 		position: relative;
 		width: 1680px;
-	}
-	.main-area{
-		width: 1326px;
-		margin: 10px 74px;
 	}
 	.container{
 		width: 1040px;
