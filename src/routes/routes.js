@@ -98,7 +98,7 @@ const routes = [{
 	},
 	{
 		path: '/notification',
-		component: () => import('@/pages/settings/global/notification.vue'),
+		component: () => import('@/pages/settings/global/operatelog.vue'),
 	},
 ]
 
