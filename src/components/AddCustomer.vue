@@ -62,7 +62,7 @@
 
 <script>
 	 export default {
-		name:"CreateWorkOrder",
+		name:"AddCustomer",
 		data() {
 	      return {
 	        dialogFormVisible: false,

@@ -17,7 +17,7 @@
 
 <script>
 	 export default {
-		name:"CreateWorkOrder",
+		name:"DeleteCustomer",
 		data() {
 	      return {
 	        dialogFormVisible: false,
