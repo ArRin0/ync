@@ -47,6 +47,9 @@
 	}
 	
 	.workOrder{
+		position: fixed;
+		top: 74px;
+		left: 74px;
 		width: 240px;
 		height: 892px;
 		background-color: #FFFFFF;

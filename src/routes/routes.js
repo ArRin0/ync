@@ -129,8 +129,8 @@ const routes = [{
 		component: () => import('@/pages/settings/custserv/dialogrule.vue'),
 	},
 	{
-		path: '/allWorkOrder',
-		component: () => import('@/components/allWorkOrder.vue'),
+		path: '/WorkOrder',
+		component: () => import('@/pages/WorkOrder/WorkOrder.vue'),
 	},
 ]
 
