@@ -94,11 +94,11 @@ const routes = [{
 	},
 	{
 		path: '/personal',
-		component: () => import('@/pages/settings/personal.vue'),
+		component: () => import('@/pages/settings/common/personal.vue'),
 	},
 	{
 		path: '/company',
-		component: () => import('@/pages/settings/company.vue'),
+		component: () => import('@/pages/settings/team/company.vue'),
 	},
 ]
 
