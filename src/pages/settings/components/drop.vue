@@ -12,17 +12,17 @@
 				  @change="selectModel4($event)"
 			></el-date-picker>
 		</div>
-		    <div class="layui-inline">
-			    <div class="layui-input-inline"  >
+		<div class="layui-inline">
+			<div class="layui-input-inline"  >
 				<el-input v-model="input" placeholder="请输入公告标题" style="width: 170px;"></el-input>
-				<el-button type="primary" icon="el-icon-search" style="width: 60px;text-align: center;">搜索</el-button>
-			    </div>
-		    </div>
-		<div>
-			<div><el-button type="primary" style="width: 60px;text-align: center;">搜索</el-button></div>
-			<div><el-button type="primary" icon="el-icon-search" style="width: 60px;text-align: center;">搜索</el-button></div>
-			<div><el-button type="primary" icon="el-icon-search" style="width: 60px;text-align: center;">搜索</el-button></div>
+				<el-button type="primary" icon="el-icon-search">搜索</el-button>
+			 </div>
 		</div>
+
+		<div class="btn" tyle="width: 100px;"><el-button type="primary" style="width: 100px;">添加公告</el-button></div>
+		<div class="btn" style="width: 100px;"><el-button style="width: 100px;">批量删除</el-button></div>
+		<div class="btn" style="width: 120px;"><el-button style="width: 120px;">导出当前数据</el-button></div>
+
 		</div>
 </template>
 
@@ -38,18 +38,16 @@
 </script>
 
 <style>
-	.layui-inline{
-		display: inline-block;
-		margin-left: 20px;
-		margin-top: 21px;
+	.myf{
+		display: flex;
+		justify-content: space-around;
 	}
 	.timelay{
 		display: inline-block;
 		margin-left: 20px;
-
+		margin-top: 21px;
 	}
-	.myinput{
-		display: inline-block;
-		margin-left: 20px;
+	.btn{
+		margin-top: 21px;
 	}
 </style>

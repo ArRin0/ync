@@ -93,8 +93,20 @@ const routes = [{
 		component: () => import('@/components/workQuality.vue'),
 	},
 	{
-		path: '/personal',
+		path: '/settingofpersonal',
 		component: () => import('@/pages/settings/common/personal.vue'),
+	},
+	{
+		path: '/settingofcompany',
+		component: () => import('@/pages/settings/team/company.vue'),
+	},
+	{
+		path: '/settingofnotice',
+		component: () => import('@/pages/settings/common/notice.vue'),
+	},
+	{
+		path: '/settingofcustserv',
+		component: () => import('@/pages/settings/team/custserv.vue'),
 	},
 	{
 		path: '/notification',
