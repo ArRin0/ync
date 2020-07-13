@@ -24,6 +24,7 @@
 		padding-bottom: 15px;
 		background-color: rgb(240, 245, 252);
 		margin: 6px;
+		border-radius: 4px;
 	}
 	.box .p{
 		width: 149px;

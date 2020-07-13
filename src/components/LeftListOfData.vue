@@ -2,7 +2,7 @@
 	<div class="workOrder">
 			<dl>
 				<dt>在线客服</dt>
-				<dd :class="activeClass ==k?'active':''" v-for="(item,k) in items" @click="IsActive(k)">
+				<dd :class="activeClass ==position?'active':''" v-for="(item,k) in items" @click="IsActive(k)">
 					<div class="item">{{item.name}}</div>
 				</dd>
 			</dl>
@@ -27,7 +27,24 @@
 		methods: {
 		      IsActive(k) {
 		        this.activeClass = k;
-		      }
+		      },
+			  IsActive(k) {
+			  	if (k == 0) {
+			  		this.$router.push('/data');
+			  	}
+			  	if (k == 1) {
+						this.$router.push('/workload');
+					}
+					if (k == 2) {
+						this.$router.push('/workmanship');
+					}
+					if (k == 3) {
+						this.$router.push('/attendance');
+					}
+					if (k == 4) {
+						this.$router.push('/visits');
+					}
+			  },
 		}
 	}
 </script>
