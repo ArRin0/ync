@@ -25,24 +25,40 @@
 			}
 		},
 		methods: {
-		      IsActive(k) {
+		      created() {
+				this.k=this.$route.query.k;
 		        this.activeClass = k;
 		      },
 			  IsActive(k) {
 			  	if (k == 0) {
-			  		this.$router.push('/data');
+			  		this.$router.push({
+						path:`/data?k=${k}`,
+						query:{k:k}
+					});
 			  	}
 			  	if (k == 1) {
-						this.$router.push('/workload');
+						this.$router.push({
+							path:`/workload?k=${k}`,
+							query:{k:k}
+						});
 					}
 					if (k == 2) {
-						this.$router.push('/workmanship');
+						this.$router.push({
+							path:`/workmanship?k=${k}`,
+							query:{k:k}
+						});
 					}
 					if (k == 3) {
-						this.$router.push('/attendance');
+						this.$router.push({
+							path:`/attendance?k=${k}`,
+							query:{k:k}
+						});
 					}
 					if (k == 4) {
-						this.$router.push('/visits');
+						this.$router.push({
+							path:`/visits?k=${k}`,
+							query:{k:k}
+						});
 					}
 			  },
 		}

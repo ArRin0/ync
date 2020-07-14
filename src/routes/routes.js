@@ -129,7 +129,6 @@ const routes = [{
 		component: () => import('@/pages/settings/custserv/dialogrule.vue'),
 	},
 	{
-<<<<<<< HEAD
 		path: '/settingofblacklist',
 		component: () => import('@/pages/settings/custserv/blacklist.vue'),
 	},
@@ -168,10 +167,10 @@ const routes = [{
 	{
 		path: '/allWorkOrder',
 		component: () => import('@/components/allWorkOrder.vue'),
-=======
+	},
+	{
 		path: '/WorkOrder',
 		component: () => import('@/pages/WorkOrder/WorkOrder.vue'),
->>>>>>> 7d9f75a9d2955a517f3e6a5fbeb4c4c6f83e69bd
 	},
 ]
 

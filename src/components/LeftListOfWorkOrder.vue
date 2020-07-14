@@ -29,7 +29,7 @@
 		      IsActive(k) {
 		        this.activeClass = k;
 				if (k == 0) {
-					this.$router.push('/');
+					this.$router.push('/WorkOrder');
 				}
 				if (k == 1) {
 					this.$router.push('/');
