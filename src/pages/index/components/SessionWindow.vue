@@ -92,7 +92,7 @@
 						</textarea>
 					</div>
 					<div class="input-btn">
-						<button type="button">发送</button>
+						<button type="button" @click="sendMsg">发送</button>
 					</div>
 				</div>
 			</div>
@@ -261,7 +261,20 @@
 		methods: {
 		      IsActive(k) {
 		        this.activeClass = k;
-		      }
+		      },
+			  sendMsg(){
+			  	let msg ={
+			  		content:this.content,
+			  		msgSenderId:this.cs.id,
+			  		msgSenderName:this.cs.nickName,
+			  		msgReceiverId:this.session.visitorId,
+			  		sessionId:this.session.id,
+			  		createTime:new Date().format('yyyy-MM-dd hh:mm:ss')
+			  	}
+			  	this.socket.send(JSON.stringify(msg));//websocket接受的是字符串
+			  	this.msgs.push(msg);//当前界面内容更新
+			  	this.content="";//聊天输入元素清空
+			  }
 		}
 		
 	}
