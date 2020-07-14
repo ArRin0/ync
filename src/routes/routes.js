@@ -172,6 +172,10 @@ const routes = [{
 		path: '/WorkOrder',
 		component: () => import('@/pages/WorkOrder/WorkOrder.vue'),
 	},
+	{
+		path: '/test1',
+		component: () => import('@/pages/index/components/SessionWindow.vue'),
+	},
 ]
 
 export default routes;
