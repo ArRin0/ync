@@ -178,7 +178,7 @@
 	}
 </script>
 
-<style>
+<style scoped >
 	.workOrder dt,.workOrder dd{
 		height: 48px;
 	}

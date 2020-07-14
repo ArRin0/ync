@@ -103,7 +103,7 @@
   }
 </script>
 
-<style>
+<style scoped>
 	.myf{
 		position: absolute;
 		width: 1294px;

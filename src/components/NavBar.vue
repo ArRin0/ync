@@ -28,7 +28,7 @@
 	}
 </script>
 
-<style>
+<style scoped >
 	/* 菜单 */
 	.nav{
 		position: fixed;

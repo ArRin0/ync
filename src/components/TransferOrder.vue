@@ -79,7 +79,7 @@
 	  };
 </script>
 
-<style>
+<style scoped >
 	.appendix{
 		margin-left: 50px;
 		margin-bottom:40px;

@@ -336,7 +336,7 @@
 	
 </script>
 
-<style>
+<style scoped >
 	.button1{
 		position: absolute;
 		top: 75px;

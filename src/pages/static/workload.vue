@@ -80,7 +80,7 @@
 	}
 </script>
 
-<style>
+<style scoped >
 	.page {
 		position: relative;
 		width: 1680px;

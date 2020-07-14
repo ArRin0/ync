@@ -68,7 +68,7 @@
 	}
 </script>
 
-<style>
+<style scoped >
 .current-session{
 	display: flex;
 }

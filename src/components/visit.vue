@@ -77,7 +77,7 @@
 	}
 </script>
 
-<style>
+<style scoped >
 	.myf{
 		position: absolute;
 		height: 765px;

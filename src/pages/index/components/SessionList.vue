@@ -47,7 +47,7 @@
 	}
 </script>
 
-<style>
+<style scoped >
 	.user-list{
 		width: 300px;
 		background-color: #fff;

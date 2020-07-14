@@ -134,7 +134,7 @@
 	}
 </script>
 
-<style>
+<style scoped >
 	.router-link-active{
 		text-decoration:none;
 	}
@@ -245,7 +245,6 @@
 		color: #333333;
 		line-height: normal;
 		text-decoration: none;
-		position: relative;
 		top: 9px; 
 	}
 	.text{

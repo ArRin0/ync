@@ -106,7 +106,7 @@
 	  };
 </script>
 
-<style>
+<style scoped>
 	body{
 		height: 100hv;
 	}

@@ -20,7 +20,7 @@
 	        </el-table-column>
 	      </template>
 	    </el-table>
-		<div class="pagination">
+<!-- 		<div class="pagination">
 			<el-pagination 
 				@size-change="handleSizeChange" 
 				@current-change="handleCurrentChange" 
@@ -32,7 +32,7 @@
 				prev-text="上一页" 
 				next-text="下一页">
 			</el-pagination>
-		</div>
+		</div> -->
 	</div>
 </template>
 
@@ -84,47 +84,9 @@
 </script>
 
 <style>
-	.myf{
-		position: absolute;
-		height: 765px;
-		width: 1292px;
-		background-color: #FFFFFF;
-		margin-left: 74px;
-		margin-top: 74px;
-		border-radius: 5px;
-	}
-	.down{
-		border-radius: 5px;
-		background-color: rgb(242,242,242);
-		display: inline-block;
-		width: 160px;
-		height: 40px;
-		margin-left:20px ;
-		text-align: center;
-		line-height: 10px;
-		margin-top: 21px;
-		margin-bottom: 21px;
-	}
 	.boxShadow{
 		margin-top: 20px;
 		padding-left: 20px;
 		padding-right: 20px;
-	}
-	.layui-inline{
-		display: inline-block;
-		margin-left: 20px;
-		margin-top: 21px;
-	}
-	.timelay{
-		display: inline-block;
-		margin-left: 20px;
-	}
-	.layui-input-inline{
-		height: 10px;
-		width: 160px;
-	}
-	.myinput{
-		display: inline-block;
-		margin-left: 20px;
 	}
 </style>

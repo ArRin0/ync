@@ -48,7 +48,7 @@ export default {
 }
 </script>
  
-<style>
+<style scoped>
 #echart {
     width: 50%;
     height: 300px;

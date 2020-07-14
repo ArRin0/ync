@@ -44,33 +44,6 @@
 		name:"drop",
 		data () {
 		  return {
-			currentPage: 1, //默认显示页面为1
-			pagesize: 5, //    每页的数据条数
-			rangeDate: [] ,
-		    tables: [],
-			myinputs:'',
-		    tableData: [{
-		      dataItem: 'visitorName',
-		      dataName: '访客名称'
-		    }, {
-		      dataItem: 'browser',
-		      dataName: '来源'
-		    }, {
-		      dataItem: 'terminal',
-		      dataName: '终端'
-		    }, {
-		      dataItem: 'visitTime',
-		      dataName: '访问时间'
-		    }, {
-		      dataItem: 'visitDuration',
-		      dataName: '访问时常'
-		    }, {
-		      dataItem: 'ip',
-		      dataName: 'ip地址'
-		    }, {
-		      dataItem: 'state',
-		      dataName: '访客状态'
-		    }],
 			options: [{
 			  value: '全部客服',
 			  label: '全部客服'
@@ -121,7 +94,7 @@
 	}
 </script>
 
-<style>
+<style scoped >
 	.layui-inline{
 		display: inline-block;
 		margin-left: 20px;
@@ -134,5 +107,9 @@
 	.myinput{
 		display: inline-block;
 		margin-left: 20px;
+	}
+	.myf{
+		height: 60px;
+		width: auto;
 	}
 </style>

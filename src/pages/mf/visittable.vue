@@ -197,7 +197,7 @@
 			.get('/visitor/select')
 			.then(resp=>{
 				let {data} = resp;
-				this.option.series.data = data.result;
+				this.tables = data.result;
 			})
 		},
 	methods: {
@@ -300,7 +300,7 @@
   }
 </script>
 
-<style>
+<style scoped >
 	.myf{
 		position: absolute;
 		height: 765px;

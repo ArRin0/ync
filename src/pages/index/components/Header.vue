@@ -30,7 +30,7 @@
 	}
 </script>
 
-<style>
+<style scoped >
 	.top{
 		height: 64px;
 		background-color: #FFFFFF;

@@ -267,7 +267,7 @@
 	}
 </script>
 
-<style>
+<style scoped >
 	/* 聊天部分 */
 	.session-box{
 		width: 1016px;
