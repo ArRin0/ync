@@ -1,105 +1,50 @@
 <template>
 	<div class="session-main-body">
-			<div class="title"><h3>七尾~在线客服</h3></div>
-			<div class="session-window">
-				<div class="session-msg sender">
-					<div class="user-img">
-						<i class="iconfont icon-beizit"></i>
-					</div>
-					<div class="msg-detail">
-						<div class="msg-title">
-							<span class="user-name">客服1号</span>
-							<span class="msg-time">2020/06/09 20:09</span>
-						</div>
-						<div class="msg-content">您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？您好，请问有什么可以帮您呢？</div>
-					</div>
+		<div class="title"><h3>七尾~在线客服</h3></div>
+		<div class="session-window">
+			<div class="session-msg sender" v-for="msg in msgs" :key="msg.id">
+				<div class="user-img">
+					<i class="iconfont icon-beizit"></i>
 				</div>
-				<div class="session-msg receiver">
-					<div class="user-img">
-						<i class="iconfont icon-beizit"></i>
+				<div class="msg-detail">
+					<div class="msg-title">
+						<span class="user-name">{{msg.visitorName}}</span>
+						<span class="msg-time">{{msg.time}}</span>
 					</div>
-					<div class="msg-detail">
-						<div class="msg-title">
-							<span class="user-name">北京客户</span>
-							<span class="msg-time">2020/06/09 20:09</span>
-						</div>
-						<div class="msg-content">您好，我想咨询下。。。？</div>
-					</div>
-				</div>
-				<div class="session-msg receiver">
-					<div class="user-img">
-						<i class="iconfont icon-beizit"></i>
-					</div>
-					<div class="msg-detail">
-						<div class="msg-title">
-							<span class="user-name">北京客户</span>
-							<span class="msg-time">2020/06/09 20:09</span>
-						</div>
-						<div class="msg-content">您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？您好，我想咨询下。。。？</div>
-					</div>
-				</div>
-				<div class="session-msg receiver">
-					<div class="user-img">
-						<i class="iconfont icon-beizit"></i>
-					</div>
-					<div class="msg-detail">
-						<div class="msg-title">
-							<span class="user-name">北京客户</span>
-							<span class="msg-time">2020/06/09 20:09</span>
-						</div>
-						<div class="msg-content">您好，我想咨询下。。。？</div>
-					</div>
-				</div>
-				<div class="session-msg receiver">
-					<div class="user-img">
-						<i class="iconfont icon-beizit"></i>
-					</div>
-					<div class="msg-detail">
-						<div class="msg-title">
-							<span class="user-name">北京客户</span>
-							<span class="msg-time">2020/06/09 20:09</span>
-						</div>
-						<div class="msg-content">您好，我想咨询下。。。？</div>
-					</div>
-				</div>
-				<div class="session-msg receiver">
-					<div class="user-img">
-						<i class="iconfont icon-beizit"></i>
-					</div>
-					<div class="msg-detail">
-						<div class="msg-title">
-							<span class="user-name">北京客户</span>
-							<span class="msg-time">2020/06/09 20:09</span>
-						</div>
-						<div class="msg-content">您好，我想咨询下。。。？</div>
-					</div>
-				</div>
-			</div>
-			<div class="session-input">
-				<div class="icon-img">
-					<span class="icon"><i class="iconfont icon-xiaolian1"></i></span>
-					<span class="file"><i class="iconfont icon-tupian"></i></span>
-				</div>
-				<div class="input-box">
-					<textarea id="msg" placeholder="请输入内容">
-		
-					</textarea>
-				</div>
-				<div class="input-btn">
-					<button type="button">发送</button>
+					<div class="msg-content">{{msg.content}}</div>
 				</div>
 			</div>
 		</div>
+		<div class="session-input">
+			<div class="icon-img">
+				<span class="icon"><i class="iconfont icon-xiaolian1"></i></span>
+				<span class="file"><i class="iconfont icon-tupian"></i></span>
+			</div>
+			<div class="input-box">
+				<textarea id="msg" placeholder="请输入内容" v-model="content">
+	
+				</textarea>
+			</div>
+			<div class="input-btn">
+				<button type="button" @click="sendMsg">发送</button>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
 	import UaParser from 'ua-parser-js';
+	require('../../utils/date.js')//加载扩展Date的文件
 	export default{
 		name:"GVisitor",
 		data:function(){
 			return {
 				socket:null,
 				userId:null,
+				name:null,
+				csId:null,
+				msgs:[],
+				content:''
 			}
 		},
 		methods:{
@@ -109,8 +54,8 @@
 					}else{
 					    console.log("您的浏览器支持WebSocket");
 					    //实现化WebSocket对象，指定要连接的服务器地址与端口  建立连接
-					    var userId = JSON.parse(localStorage.getItem("user")).id;
-					    var socketUrl="ws://localhost:8080/ccs/webSocket/"+userId;
+					    // var userId = JSON.parse(localStorage.getItem("user")).id;
+					    var socketUrl="ws://localhost:8080/ccs/webSocket/"+this.userId+"/visitor";
 					    // var socketUrl="ws://192.168.0.231:22599/webSocket/"+userId;
 					    console.log(socketUrl);
 					    if(this.socket!=null){
@@ -124,8 +69,17 @@
 					        //socket.send("这是来自客户端的消息" + location.href + new Date());
 					    };
 					    //获得消息事件
-					    this.socket.onmessage = function(msg) {
+					    this.socket.onmessage = (resp)=> {
+							debugger
 					        //当接收到websocket服务器发送当消息当时候，判断消息是会话列表有更新还是会话消息有更新，更新对应当子组件
+							let msg = JSON.parse(resp.data);
+							this.msgs.push(msg);
+							if(msg.csId){//第一次连接的时候，websocket服务器会返回服务的客服id
+								this.csId = msg.csId;
+							}
+							if(msg.sessionId){//第一次连接的时候，websocket服务器会返回会话id
+								this.sessionId = msg.sessionId;
+							}
 					    };
 					    //关闭事件
 					    this.socket.onclose = function() {
@@ -140,20 +94,23 @@
 			getId:function(){
 				// 将客户端信息：IP,客户名称，浏览器，屏幕尺寸，设备等信息提交给服务器，服务器返回当前的访客 id
 				 let ip = localStorage.getItem("ip");
-				 let visitor_name = localStorage.getItem("cname");
+				 let name=this.name = localStorage.getItem("cname");
 				 
 				 let uaParser = new UaParser();
 				 let uaInfo = uaParser.getResult();
+				 let device = uaInfo.os.name;
 				 let browser = uaInfo.browser.name;
-				 let screenSize = `${window.screen.width}px,${window.screen.height}px`;
+				 let screenSize = `${window.screen.width}px*${window.screen.height}px`;
+				 
 				 let params = {
 					 ip,
-					 visitor_name,
+					 name,
 					 browser,
-					 screenSize
+					 screenSize,
+					 device
 				 }
 				 this.$axios
-				 .post('/visitor/save',params)//将封装好的参数提交至后端
+				 .post('/visitor/save',params)
 				 .then(resp=>{
 					 let {data} = resp;
 					 this.userId = data.success?data.message:"";
@@ -161,7 +118,21 @@
 				 })
 				 .catch(err=>{
 					 console.log(err)
-				 })	 
+				 })
+				 
+			},
+			sendMsg:function(){
+				let msg ={
+					content:this.content,
+					msgSenderId:this.userId,
+					msgSenderName:this.name,
+					msgReceiverId:this.csId,
+					sessionId:this.sessionId,
+					createTime:new Date().format('yyyy-MM-dd hh:mm:ss')
+				}
+				this.socket.send(JSON.stringify(msg));
+				this.msgs.push(msg);
+				this.content=''
 			}
 		},
 		created() {
