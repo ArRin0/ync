@@ -4,7 +4,7 @@
 		<div class="menu">
 			<div class="menu-item"><router-link to="/home"><i class="iconfont icon-shouye7"></i></router-link></div>
 			<div class="menu-item"><router-link to="/index/current-session"><i class="iconfont icon-gongdanguanli"></i></router-link></div>
-			<div class="menu-item"><router-link to="/visit"><i class="iconfont icon-icon-test"></i></router-link></div>
+			<div class="menu-item"><router-link to="/visit"><i class="iconfont icon-fangke"></i></router-link></div>
 			<div class="menu-item"><router-link to="/index/history-session"><i class="iconfont icon-lishi"></i></router-link></div>
 			<div class="menu-item"><router-link to="/customer"><i class="iconfont icon-yonghu"></i></router-link></div>
 			<div class="menu-item"><router-link to="/WorkOrder"><i class="iconfont icon-gongdan"></i></router-link></div>
@@ -43,7 +43,7 @@
 	.router-link-active{
 		text-decoration:none;
 	}
-	i{
+	a{
 		text-decoration:none;
 	}
 	.logo{

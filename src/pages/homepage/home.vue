@@ -34,45 +34,45 @@
 				<div class="text">快捷入口</div>
 				<div class="socket">
 					<div class="control">
-						<router-link to="">
+						<router-link to="/index/current-session">
 							<div class="c-img" style="background-color: #006eff;"><i class="iconfont icon-gongdanguanli" style="position: relative;top: 6px;"></i></div>
-							<span class="">当前会话</span>
+							<span class="link_text" >当前会话</span>
 						</router-link>
 					</div>
 					<div class="control">
-						<router-link to="">
+						<router-link to="/visit">
 							<div class="c-img" style="background-color: #ff6262;"><i class="iconfont icon-icon-test" style="position: relative;top: 6px;"></i></div>
-							<span class="">访客管理</span>
+							<span class="link_text">访客管理</span>
 						</router-link>
 					</div>
 					<div class="control">
-						<router-link to="">
+						<router-link to="/index/history-session">
 							<div class="c-img" style="background-color: #2ed477;"><i class="iconfont icon-lishi" style="position: relative;top: 6px;"></i></div>
-							<span class="">会话记录</span>
+							<span class="link_text">会话记录</span>
 						</router-link>
 					</div>
 					<div class="control">
-						<router-link to="">
+						<router-link to="/customer">
 							<div class="c-img" style="background-color: #ff9138;"><i class="iconfont icon-yonghu" style="position: relative;top: 6px;"></i></div>
-							<span class="">客户管理</span>
+							<span class="link_text">客户管理</span>
 						</router-link>
 					</div>
 					<div class="control">
-						<router-link to="">
+						<router-link to="/WorkOrder">
 							<div class="c-img" style="background-color: #006eff;"><i class="iconfont icon-gongdan" style="position: relative;top: 6px;"></i></div>
-							<span class="">工单中心</span>
+							<span class="link_text">工单中心</span>
 						</router-link>
 					</div>
 					<div class="control">
-						<router-link to="">
+						<router-link to="/data">
 							<div class="c-img" style="background-color: #ff6262;"><i class="iconfont icon-tongji" style="position: relative;top: 6px;"></i></div>
-							<span class="">数据报表</span>
+							<span class="link_text">数据报表</span>
 						</router-link>
 					</div>
 					<div class="control">
 						<router-link to="">
 							<div class="c-img" style="background-color: #e4e4e4;"><i class="iconfont icon-jia" style="position: relative;top: 6px;"></i></div>
-							<span class="">编辑入口</span>
+							<span class="link_text">编辑入口</span>
 						</router-link>
 					</div>
 				</div>
@@ -137,6 +137,9 @@
 <style scoped >
 	.router-link-active{
 		text-decoration:none;
+	}
+	a {
+	  text-decoration: none;
 	}
 	.page {
 		position: relative;
