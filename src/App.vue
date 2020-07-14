@@ -28,4 +28,10 @@ export default {
 		font-size: 14px;
 		font-feature-settings: "kern";
 	}
+	.fr{
+		float: right;
+	}
+	.fl{
+		float: left;
+	}
 </style>

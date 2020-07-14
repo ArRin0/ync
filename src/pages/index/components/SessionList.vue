@@ -2,7 +2,7 @@
 	<div class="user-list">
 		<dl>
 			<dt>{{title}}</dt>
-			<dd v-for="session in sessions" @click="doClick(session.id)">
+			<dd v-for="session in sessions" @click="doClick(session)">
 				<div class="user-img">
 					<i class="iconfont icon-beizit"></i>
 				</div>

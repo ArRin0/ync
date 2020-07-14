@@ -2,6 +2,7 @@
 	<div class="page">
 		<nav-bar></nav-bar>
 		<g-header></g-header>
+		
 		<div class="main-area">
 			<router-view/>
 		</div>
@@ -9,8 +10,8 @@
 </template>
 
 <script>
-	import NavBar from '@/components/NavBar.vue'
-	import GHeader from '@/components/Header.vue'
+	import NavBar from './components/NavBar.vue'
+	import GHeader from './components/Header.vue'
 
 	export default {
 		name: "Index",
@@ -21,17 +22,14 @@
 	}
 </script>
 
-<style scoped >
+<style>
 	.page {
-/* 		position: relative; */
-		width: 100%;
+		position: relative;
+		width: 1680px;
 	}
 	.main-area{
 		width: 1326px;
-/* 		margin: 10px 74px; */
-		position: absolute;
-		top:74px;
-		left: 74px;
+		margin: 10px 74px;
 		display: flex;
 		justify-content: space-between;
 	}

@@ -30,7 +30,7 @@
 	}
 </script>
 
-<style scoped >
+<style>
 	.top{
 		height: 64px;
 		background-color: #FFFFFF;
@@ -59,6 +59,11 @@
 	}
 	.user-msg i{
 		font-size: 20px;
+	}
+	.user-img{
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
 	}
 	.user-msg:hover{
 		color: #006eff;
