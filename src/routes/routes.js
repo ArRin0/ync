@@ -77,7 +77,7 @@ const routes = [{
 		component: () => import('@/components/AddCustomer.vue'),
 	},
 	{
-		path: '/test',
+		path: '/CustomerDetails',
 		component: () => import('@/pages/CustomerDetails/CustomerDetails.vue'),
 	},
 	{
