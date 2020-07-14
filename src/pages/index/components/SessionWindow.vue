@@ -6,11 +6,10 @@
 				<span class="session-index">首次会话</span>
 			</div>
 			<div class="dialog-btns">
-				<span class="dialog-btn" @click="createOrder"><i class="iconfont icon-add"></i>创建工单</span>
-
-				<span class="dialog-btn"><i class="iconfont icon-fanhui"></i>转接</span>
-				<span class="dialog-btn"><i class="iconfont icon-lahei"></i>拉黑</span>
-				<span class="dialog-btn"><i class="iconfont icon-jieshu"></i>结束会话</span>
+				<CreateWorkOrder></CreateWorkOrder>
+				<Transfer></Transfer>
+				<black></black>
+				<EndSession></EndSession>
 				<!-- 创建工单的对话框 -->
 
 				<!-- 拉黑对话框 -->
@@ -50,12 +49,10 @@
 			<div class="session-util-tab">
 				<dl>
 					<dt class="tabs">
-						<span class="tab-title active">资料</span>
-						<span class="tab-title">常用语</span>
-						<span class="tab-title">历史工单</span>
+						<span :class="activeClass ==k?'tab-title active':'tab-title'" v-for="(title,k) in titles" @click="IsActive(k)">{{title.name}}</span>
 					</dt>
 					<dd>
-						<div class="tab-content active">
+						<div :class="activeClass ==0?'tab-content active':'tab-content'">
 							<dl class="customer-device">
 								<dt>访客信息</dt>
 								<dd><span class="label">来源</span><span class="item">113.128.230.51</span></dd>
@@ -78,8 +75,19 @@
 								<dd><span class="label">客户标签</span><span class="item"><span>已上市</span><span>潜在客户</span></span></dd>
 							</dl>
 						</div>
-						<div class="tab-content active">常用语</div>
-						<div class="tab-content">
+						<div :class="activeClass ==1?'tab-content active':'tab-content'">
+							<el-collapse v-model="activeName" accordion>
+							  <el-collapse-item title="礼貌性常用语" name="1">
+							    <div class="common">很高兴为您服务，祝您生活愉快！</div>
+							    <div class="common">不客气，这是我应该的！</div>
+							  </el-collapse-item>
+							  <el-collapse-item title="常见问题回答" name="2">
+							    <div class="common">目前人有些多，麻烦您等待一会呢</div>
+							    <div class="common">好的，这就为您办理该业务</div>
+							  </el-collapse-item>
+							</el-collapse>
+						</div>
+						<div :class="activeClass ==2?'tab-content active':'tab-content'">
 							<dl class="customer-info">
 								<dt>工单信息</dt>
 								<dd><span class="label">工单标题</span><span class="item">分类一</span></dd>
@@ -156,13 +164,25 @@
 </template>
 
 <script>
+	import CreateWorkOrder from '@/components/CreateWorkOrder.vue'
+	import Transfer from '@/components/Transfer.vue'
+	import black from '@/components/black.vue'
+	import EndSession from '@/components/EndSession.vue'
 	require('../../../utils/date.js')
 	
 	export default {
 		name: "SessionWindow",
+		components:{CreateWorkOrder,Transfer,black,EndSession},
 		props: ["session","msgs","socket"],
 		data: function() {
 			return {
+				activeClass: 0,
+				activeName: '1',
+				titles:[
+				    {name: '资料'},
+				    {name: '常用语'},
+					{name: '历史工单'},
+				],
 				orderDialogVisible: false,
 				form: {
 					name: '',
@@ -183,6 +203,11 @@
 			this.cs = JSON.parse(suser);
 		},
 		methods: {
+	
+			      IsActive(k) {
+			        this.activeClass = k;
+			      },
+			
 			createOrder() {
 				this.orderDialogVisible = true;
 			},
@@ -227,7 +252,7 @@
 
 	.dialog-btns {
 		flex: 1;
-		text-align: right;
+	/* 	text-align: right; */
 		color: #006EFF;
 	}
 
@@ -433,4 +458,262 @@
 		color: #006EFF;
 		cursor: pointer;
 	}
+	
+	
+	
+	
+	
+	
+	
+	.session-box{
+			width: 1016px;
+			height: 800px;
+			background-color: #fff;
+			border-radius: 4px;
+		}
+		
+		.session-head{
+			display: flex;
+			height: 53px;
+			padding: 15px 19px 16px;
+			border-bottom: 2px solid rgba(242, 242, 242, 0.498);
+			box-sizing: border-box;
+			position: relative;
+		}
+		
+		.dialog-btns{
+			flex: 1;
+			/* text-align: right; */
+			color: #006EFF;
+			display: flex;
+		}
+		.session-index{
+			font-size: 14px;
+			opacity: .6;
+		}
+		.user-name{
+			font-size: 16px;
+		}
+		.session-body{
+			display: flex;
+			
+		}
+		.session-body .session-main-body{
+			width: 700px;
+			border-right: 2px solid rgba(242, 242, 242, 0.498);
+		}
+		.session-main-body .session-window{
+			background-color: rgba(242, 242, 242, 0.498);
+			height: 420px;
+			padding: 50px 20px;
+			overflow-y:auto;
+		}
+		.session-main-body .session-window::-webkit-scrollbar{
+			display: none;
+		}
+		.session-main-body .session-input{
+			height: 147px;
+		}
+		.session-body .session-util-tab{
+			width: 340px;
+		}
+		
+		.session-window .session-msg{
+			display: flex;
+		}
+		
+		.session-msg .user-img{
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			border-radius: 50%;
+			text-align: center;
+			background-color: #006EFF;
+			color: #FFFFFF;
+			margin-right: 10px;
+			margin-left: 0px;
+		}
+		.session-msg.receiver .user-img{
+			margin-right: 0px;
+			margin-left: 10px;
+		}
+		.session-msg .msg-detail{
+			max-width: 80%;
+		}
+		.session-msg .msg-title{
+			color: #ccc;
+			margin-bottom: 6px;
+		}
+		.session-msg .msg-content{
+			padding: 10px 12px;
+			background-color: #fff;
+			box-shadow: rgb(204, 204, 204) 0px 0px 5px 0px;
+			border-radius: 4px;
+			margin-bottom: 20px;
+		}
+		.session-msg.receiver{
+			flex-direction: row-reverse;
+		}
+		.session-input{
+			padding: 10px 20px;
+		}
+		.session-input .icon-img{
+			height: 30px;
+			line-height: 30px;
+			margin-bottom: 12px;
+		}
+		.session-input .icon-img i{
+			font-size: 20px;
+			color: rgba(0,0,0,.6);
+		}
+		.session-input .icon-img span{
+			margin-right: 23px;
+		}
+		.session-input .input-box{
+			height: 100px;
+		}
+		.input-box textarea{
+			height: 100%;
+			width: 100%;
+			border-style:none ;
+		}
+		.input-box textarea:focus{
+			outline: none;
+		}
+		.input-btn{
+			text-align: right;
+		}
+		.input-btn button{
+			background-color: #006EFF;
+			color: #fff;
+			border-style: none;
+			width: 100px;
+			height: 40px;
+			border-radius: 4px;
+			margin-top: 10px;
+		}
+		
+		/* 选项卡 */
+		.tab-title:hover{
+			cursor:pointer;
+		}
+		.session-util-tab .tabs{
+			display: flex;
+			justify-content: space-between;
+			height: 64px;
+			padding: 0px 22px;
+			border-bottom: 2px solid  rgba(242, 242, 242, 0.498);
+			color:rgb(51,51,51);
+			font-weight: 400;
+		}
+		.session-util-tab .tabs span{
+			line-height: 64px;
+		}
+		.session-util-tab .tabs span.active{
+			color: #006EFF;
+			border-bottom: 4px solid #006EFF;
+		}
+		.session-util-tab>dl>dd{
+			padding: 20px;
+		}
+		.session-util-tab>dl>dd .tab-content{
+			display: none;
+		}
+		.session-util-tab>dl>dd .tab-content.active{
+			display: block;
+		}
+		
+		.tab-content dt{
+			font-size: 16px;
+			font-weight: 400;
+			color: rgb(51,51,51);
+			margin-bottom: 16px;
+		}
+		.box>span{
+			float: right;
+			background-color: transparent;
+			border-style: none;
+			color: #006EFF;
+			font-size: 14px;
+		}
+		.box>span:hover{
+			cursor: pointer;
+		}
+		.tab-content dt button i{
+			margin-right: 10px;
+		}
+		.tab-content dd{
+			height: 24px;
+			line-height: 24px;
+			font-size: 13px;
+			font-weight: 400;
+		}
+		.tab-content dd .label{
+			display: inline-block;
+			width: 74px;
+			margin-right: 13px;
+			color: rgb(204,204,204);
+		}
+		
+		.tab-content dd .item{
+			color: rgb(51,51,51);
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+		
+		.tab-content dl{
+			margin-bottom: 20px;
+		}
+		
+		.detail{
+			text-align: right;
+			color: #006EFF;
+			cursor: pointer;
+		}
+		.common:hover{
+			cursor: pointer;
+			background-color: rgba(0, 110, 255, 0.098);
+		}
+		.common{
+			height: 40px;
+			width: 340px;
+			line-height: 40px;
+			font-size: 13px;
+			font-weight: 400;
+			padding-left: 20px;
+			border:1px solid hsla(0,0%,100%,.5 );
+			background:white;
+			background-clip:padding-box;
+		}
+	/* 	CreateWorkOrder{
+			width: 60px;
+			float:right;
+		}
+		.box{
+			float:right;
+		}
+		.el-button.el-button--text{
+			height: 20px;
+		} */
+		 .tem1.box{
+			position: absolute;
+			left:630px;
+			bottom: 6px;	
+		}	
+		.tem2.box{
+			position: absolute;
+			left:740px;
+			bottom: 6px;	
+		}	
+		.tem3.box{
+			position: absolute;
+			left:830px;
+			bottom: 6px;	
+		}	
+		.tem4.box{
+			position: absolute;
+			left:920px;
+			bottom: 6px;	
+		}	
 </style>
